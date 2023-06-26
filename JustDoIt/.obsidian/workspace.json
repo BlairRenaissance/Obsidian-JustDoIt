@@ -1,0 +1,214 @@
+{
+  "main": {
+    "id": "c0b98e69b3eb8cc9",
+    "type": "split",
+    "children": [
+      {
+        "id": "d995e5d620f8289b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3ebfaba6a4c1d0fc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Unity/Unity线程.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b168f61841896ac7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "C井/Reflection 反射机制.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b8b3a31e78d91872",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "C++/Data Definition/POD.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "514965fc8fb1b9e3",
+    "type": "split",
+    "children": [
+      {
+        "id": "38269a30efa876ee",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f9bef235a159df84",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c3352f7b002312bf",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0978cde9f636fbe9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "105a2809d8876157",
+    "type": "split",
+    "children": [
+      {
+        "id": "10395b020dac1f35",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "32b0cb6b49579238",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Unity/Unity线程.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e4cdee36a162ab2c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Unity/Unity线程.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "50d602c09eecb96f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "12efb9aeaae6b40c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Unity/Unity线程.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "f9bef235a159df84",
+  "lastOpenFiles": [
+    "C井/System.Object.md",
+    "C井/Reflection 反射机制.md",
+    "Unity/Unity线程.md",
+    "Unity/Platform development/将 Unity 集成到 Android 应用程序中.md",
+    "Unity/Platform development",
+    "Unity/Job System.md",
+    "Unity/Android平台开发",
+    "Unity/Draw Call Optimization.md",
+    "Unity/Tools/Assembly Compilation.md",
+    "Unity/Tools",
+    "Unity/Tools/Xcode帧调试器.md",
+    "Pasted image 20230619173213.png.md",
+    "Unity/Mesh.md",
+    "Pasted image 20230619173213.png",
+    "Pasted image 20230619173201.png",
+    "Pasted image 20230619173118.png.md",
+    "Pasted image 20230619173118.png",
+    "MIT-Missing-Semester/NDK.md",
+    "MIT-Missing-Semester/The Shell.md",
+    "C++/webserver.pdf",
+    "C++/WebServer.md",
+    "算法/双指针.md",
+    "C++/Data Definition/POD.md",
+    "C++/代码随想录项目精讲系列-webserver.pdf",
+    "C++/Data Definition/Union.md",
+    "C井/Boxing and Unboxing.md",
+    "C井/Record.md",
+    "C井",
+    "Pasted image 20230605150133.png",
+    "Unity/Optimize",
+    "Unity/Base",
+    "C++/内存泄露.md",
+    "算法/语法小点.md",
+    "代码随想录项目精讲系列-webserver 1.pdf",
+    "算法",
+    "C++/Data Definition/Non-trivial.md",
+    "MIT-Missing-Semester.md"
+  ]
+}
