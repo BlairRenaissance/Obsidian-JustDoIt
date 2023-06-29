@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C井/Reflection 反射机制.md",
+                "file": "Unity/GameObject.setActive & Behavior.enabled.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Unity/Unity线程.md",
+                "file": "Unity/GameObject.setActive & Behavior.enabled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Unity/Unity线程.md",
+                "file": "Unity/GameObject.setActive & Behavior.enabled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Unity/Unity线程.md"
+                "file": "Unity/GameObject.setActive & Behavior.enabled.md"
               }
             }
           }
@@ -171,11 +171,14 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "f9bef235a159df84",
+  "active": "b168f61841896ac7",
   "lastOpenFiles": [
+    "Unity/Shader/UNITY_Z_0_FAR_FROM_CLIPSPACE.md",
+    "Unity/GameObject.setActive & Behavior.enabled.md",
+    "Unity/Shader",
+    "Unity/Unity线程.md",
     "C井/System.Object.md",
     "C井/Reflection 反射机制.md",
-    "Unity/Unity线程.md",
     "Unity/Platform development/将 Unity 集成到 Android 应用程序中.md",
     "Unity/Platform development",
     "Unity/Job System.md",
@@ -207,7 +210,6 @@
     "C++/内存泄露.md",
     "算法/语法小点.md",
     "代码随想录项目精讲系列-webserver 1.pdf",
-    "算法",
     "C++/Data Definition/Non-trivial.md",
     "MIT-Missing-Semester.md"
   ]
