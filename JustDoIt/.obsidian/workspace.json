@@ -13,38 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Unity/Unity线程.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b168f61841896ac7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Unity/GameObject.setActive & Behavior.enabled.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b8b3a31e78d91872",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "C++/Data Definition/POD.md",
+                "file": "C++/3 Data Types.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Unity/GameObject.setActive & Behavior.enabled.md",
+                "file": "C++/3 Data Types.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Unity/GameObject.setActive & Behavior.enabled.md",
+                "file": "C++/3 Data Types.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Unity/GameObject.setActive & Behavior.enabled.md"
+                "file": "C++/3 Data Types.md"
               }
             }
           }
@@ -163,54 +138,55 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:打开快速切换": false,
-      "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
     }
   },
-  "active": "b168f61841896ac7",
+  "active": "3ebfaba6a4c1d0fc",
   "lastOpenFiles": [
-    "Unity/Shader/UNITY_Z_0_FAR_FROM_CLIPSPACE.md",
-    "Unity/GameObject.setActive & Behavior.enabled.md",
-    "Unity/Shader",
+    "C++/4 Type Conversion 类型转换.md",
+    "C++/5 Type deduction 类型推断.md",
+    "C++/6 Function overload.md",
     "Unity/Unity线程.md",
+    "C++/WebServer.md",
+    "C++/1 Compiling your source code.md",
+    "C++/2 Preprocessor 预处理器.md",
+    "C++/3 Data Types.md",
+    "C++/内存泄露.md",
+    "C++/Assert 断言.md",
+    "C++/webserver.pdf",
+    "C++/Data Definition/Union.md",
+    "Unity/Draw Call Optimization.md",
+    "Unity/Job System.md",
+    "Unity/GameObject.setActive & Behavior.enabled.md",
+    "Unity/Shader/UNITY_Z_0_FAR_FROM_CLIPSPACE.md",
+    "Unity/Shader",
+    "Unity/Mesh.md",
+    "Unity/Tools/Assembly Compilation.md",
+    "Unity/Tools/Xcode帧调试器.md",
     "C井/System.Object.md",
     "C井/Reflection 反射机制.md",
     "Unity/Platform development/将 Unity 集成到 Android 应用程序中.md",
     "Unity/Platform development",
-    "Unity/Job System.md",
     "Unity/Android平台开发",
-    "Unity/Draw Call Optimization.md",
-    "Unity/Tools/Assembly Compilation.md",
     "Unity/Tools",
-    "Unity/Tools/Xcode帧调试器.md",
     "Pasted image 20230619173213.png.md",
-    "Unity/Mesh.md",
     "Pasted image 20230619173213.png",
     "Pasted image 20230619173201.png",
     "Pasted image 20230619173118.png.md",
     "Pasted image 20230619173118.png",
     "MIT-Missing-Semester/NDK.md",
     "MIT-Missing-Semester/The Shell.md",
-    "C++/webserver.pdf",
-    "C++/WebServer.md",
     "算法/双指针.md",
-    "C++/Data Definition/POD.md",
     "C++/代码随想录项目精讲系列-webserver.pdf",
-    "C++/Data Definition/Union.md",
-    "C井/Boxing and Unboxing.md",
-    "C井/Record.md",
     "C井",
     "Pasted image 20230605150133.png",
     "Unity/Optimize",
     "Unity/Base",
-    "C++/内存泄露.md",
-    "算法/语法小点.md",
-    "代码随想录项目精讲系列-webserver 1.pdf",
-    "C++/Data Definition/Non-trivial.md",
-    "MIT-Missing-Semester.md"
+    "代码随想录项目精讲系列-webserver 1.pdf"
   ]
 }
