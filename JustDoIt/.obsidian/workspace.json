@@ -4,22 +4,71 @@
     "type": "split",
     "children": [
       {
-        "id": "d995e5d620f8289b",
+        "id": "c45348bf51306e7e",
         "type": "tabs",
         "children": [
           {
-            "id": "3ebfaba6a4c1d0fc",
+            "id": "09f0086459aa1f61",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C++/3 Data Types.md",
+                "file": "白皮书/Marker.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "54a8ff9b204234e2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "端/What?!.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b71c231973908f35",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "端/What?!.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "71813c00d6df4d22",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "端/What?!.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "44b26126c7c8a8c9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作渲染引擎/端上/创建地图视图.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -69,7 +118,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 251.5
   },
   "right": {
     "id": "105a2809d8876157",
@@ -85,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "C++/3 Data Types.md",
+                "file": "工作渲染引擎/端上/创建地图视图.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,8 +151,8 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "C++/3 Data Types.md",
-                "linksCollapsed": false,
+                "file": "工作渲染引擎/端上/创建地图视图.md",
+                "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
             }
@@ -125,16 +174,15 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "C++/3 Data Types.md"
+                "file": "工作渲染引擎/端上/创建地图视图.md"
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -146,47 +194,50 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3ebfaba6a4c1d0fc",
+  "active": "44b26126c7c8a8c9",
   "lastOpenFiles": [
-    "C++/4 Type Conversion 类型转换.md",
-    "C++/5 Type deduction 类型推断.md",
-    "C++/6 Function overload.md",
-    "Unity/Unity线程.md",
-    "C++/WebServer.md",
-    "C++/1 Compiling your source code.md",
-    "C++/2 Preprocessor 预处理器.md",
-    "C++/3 Data Types.md",
-    "C++/内存泄露.md",
-    "C++/Assert 断言.md",
-    "C++/webserver.pdf",
-    "C++/Data Definition/Union.md",
-    "Unity/Draw Call Optimization.md",
-    "Unity/Job System.md",
-    "Unity/GameObject.setActive & Behavior.enabled.md",
+    "工作渲染引擎/端上/Pasted image 20230728110014.png",
+    "工作渲染引擎/端上/创建地图视图.md",
+    "工作渲染引擎/端上/地图放在Fragment里切换.md",
+    "![Pasted.md",
+    "端/What?!.md",
+    "工作渲染引擎/引擎",
+    "工作渲染引擎/端上",
+    "工作渲染引擎",
+    "工作渲染引擎/引擎/瓦片缓存策略.md",
+    "端/impl实现类.md",
+    "白皮书/Marker.md",
+    "白皮书/绘制POI.md",
+    "白皮书/绘制气泡.md",
+    "C++/Basic/Data Definition/Non-trivial.md",
+    "渲染/模型文件.md",
+    "渲染",
+    "C++/Basic/Assert 断言.md",
+    "C++/Basic/1 Compiling your source code.md",
+    "端/handler.post.md",
+    "C++/Basic",
+    "白皮书",
+    "Overlay白皮书.md",
+    "baseOverlay.png",
+    "MarkerAvoidRouteRule.png",
+    "().md",
+    "OverlayType.png",
+    "Overlay白皮书",
+    "端",
+    "Unity/Shader/GameObject.setActive & Behavior.enabled.md",
     "Unity/Shader/UNITY_Z_0_FAR_FROM_CLIPSPACE.md",
+    "Unity/Shader/ConstantBuffer.md",
+    "C++/Basic/4 Type Conversion 类型转换.md",
+    "C++/Basic/5 Type deduction 类型推断.md",
+    "C++/Basic/7 Function template.md",
+    "Unity/Draw Call Optimization.md",
+    "C++/Basic/6 Function overload.md",
+    "C++/Basic/3 Data Types.md",
+    "C++/webserver.pdf",
     "Unity/Shader",
-    "Unity/Mesh.md",
-    "Unity/Tools/Assembly Compilation.md",
-    "Unity/Tools/Xcode帧调试器.md",
-    "C井/System.Object.md",
-    "C井/Reflection 反射机制.md",
-    "Unity/Platform development/将 Unity 集成到 Android 应用程序中.md",
-    "Unity/Platform development",
-    "Unity/Android平台开发",
-    "Unity/Tools",
-    "Pasted image 20230619173213.png.md",
     "Pasted image 20230619173213.png",
     "Pasted image 20230619173201.png",
-    "Pasted image 20230619173118.png.md",
     "Pasted image 20230619173118.png",
-    "MIT-Missing-Semester/NDK.md",
-    "MIT-Missing-Semester/The Shell.md",
-    "算法/双指针.md",
-    "C++/代码随想录项目精讲系列-webserver.pdf",
-    "C井",
-    "Pasted image 20230605150133.png",
-    "Unity/Optimize",
-    "Unity/Base",
-    "代码随想录项目精讲系列-webserver 1.pdf"
+    "Pasted image 20230605150133.png"
   ]
 }

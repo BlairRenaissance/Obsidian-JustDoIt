@@ -1,5 +1,4 @@
 {
-  "editor:fold-more": [],
   "markdown:toggle-preview": [],
   "app:toggle-right-sidebar": [
     {
@@ -32,6 +31,24 @@
         "Mod"
       ],
       "key": "J"
+    }
+  ],
+  "editor:fold-all": [
+    {
+      "modifiers": [
+        "Ctrl",
+        "Mod"
+      ],
+      "key": "F"
+    }
+  ],
+  "editor:unfold-all": [
+    {
+      "modifiers": [
+        "Ctrl",
+        "Mod"
+      ],
+      "key": "U"
     }
   ]
 }
