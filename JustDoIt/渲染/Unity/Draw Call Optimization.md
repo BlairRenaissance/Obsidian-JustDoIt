@@ -24,7 +24,7 @@ There are several methods you can use in Unity to optimize and reduce draw calls
 - [Manually combining meshes](https://docs.unity3d.com/Manual/combining-meshes.html): Manually combine multiple meshes into a single mesh, using the [Mesh.CombineMeshes](https://docs.unity3d.com/ScriptReference/Mesh.CombineMeshes.html) function. Unity renders the combined mesh in a single draw call instead of one draw call per mesh.
 - [SRP Batcher](https://docs.unity3d.com/Manual/SRPBatcher.html): If your Project uses a Scriptable Render Pipeline(SRP), use the SRP Batcher to reduce the CPU time Unity requires to prepare and dispatch draw calls for materials that use the same shader variant. 
 
-![image.png](https://pic4.58cdn.com.cn/nowater/webim/big/n_v2352986c0c67f4d2b88f672ee0d9add72.png)
+![image.png](https://pic3.zhimg.com/v2-f5b8402d281543a9debe941f9762889a_r.jpg)
 
 [参考：Unity渲染优化的4种批处理](https://zhuanlan.zhihu.com/p/432223843)
 
@@ -41,8 +41,6 @@ If you mark a GameObject for static batching and Unity successfully batches it, 
 
 
 # Compare 
-
-![image.png](https://pic7.58cdn.com.cn/nowater/webim/big/n_v2c02e9ee841944917a749dc11d04dea20.png)
 
 1. Static batching ***combines meshes that don’t move***. Dynamic batching ***batches moving GameObjects***.
 
