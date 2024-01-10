@@ -4,35 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "c45348bf51306e7e",
+        "id": "f785a1f1dac305d7",
         "type": "tabs",
         "children": [
           {
-            "id": "09f0086459aa1f61",
+            "id": "5efc17db43fe098d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "白皮书/Marker.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "37eab58bd16686ce",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "白皮书/Marker.md",
+                "file": "工作/HD道路响应阴影 - 接口与备注.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 251.5
+    "width": 200
   },
   "right": {
     "id": "105a2809d8876157",
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "白皮书/Marker.md",
+                "file": "工作/HD道路响应阴影 - 接口与备注.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "白皮书/Marker.md",
+                "file": "工作/HD道路响应阴影 - 接口与备注.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,19 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "白皮书/Marker.md"
+                "file": "工作/HD道路响应阴影 - 接口与备注.md"
+              }
+            }
+          },
+          {
+            "id": "fea5bbf03c5e1fd1",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
               }
             }
           }
@@ -147,7 +146,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 220.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -159,52 +158,53 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "37eab58bd16686ce",
+  "active": "5efc17db43fe098d",
   "lastOpenFiles": [
-    "编程/端/NET Framework.md",
-    "Image Collection/Pasted image 20230823162345.png",
-    "Image Collection/Pasted image 20230823163818.png",
-    "渲染/Unity/Tools/Memory Profiler.md",
-    "Image Collection/Pasted image 20230823160120.png",
+    "编程/端/Android 图形显示简述.md",
+    "渲染/模型文件.md",
+    "编程/C++/经典问题.md",
+    "编程/C++/基础.md",
+    "编程/典型问题.md",
+    "Android 图形显示简述.md",
+    "渲染/OpenGL/OpenGL.md",
+    "渲染/AO 环境光遮蔽.md",
+    "渲染/SDF 有向距离场.md",
+    "渲染/Unity/Draw Call Optimization.md",
+    "编程/代码规范.md",
+    "编程/面试.md",
+    "编程/C++/Basic/Assert 断言.md",
+    "编程/C++/Basic/7.md",
+    "编程/C++/Basic/6.md",
+    "编程/C++/Basic/5 Type deduction 类型推断.md",
+    "编程/C++/Basic/4.md",
+    "编程/C++/Basic/3.md",
+    "编程/C++/Basic/2 Preprocessor 预处理器.md",
+    "工作/楼楼.md",
+    "工作/HD道路响应阴影 - 接口与备注.md",
+    "Screenshot_2023-11-14-17-30-38-145_lockscreen.jpg",
+    "编程/C++/Basic/Data Definition/Non-trivial.md",
+    "编程/C++/Basic/Data Definition/POD.md",
+    "渲染/纹理压缩.md",
+    "渲染/碰撞算法.md",
+    "工作/楼块相机碰撞功能接口.md",
+    "Pasted image 20231107113824.png",
+    "编程/webserver.pdf",
+    "Image Collection/Pasted image 20231018172917.png",
+    "Pasted image 20231018172837.png",
+    "Pasted image 20231018172917.png",
+    "Image Collection/Pasted image 20231017230114.png",
+    "Image Collection/Pasted image 20231018171228.png",
+    "Pasted image 20231018171228.png",
+    "Image Collection/Pasted image 20231018162805.png",
+    "Pasted image 20231018162805.png",
+    "渲染/图形学",
+    "工作",
     "Image Collection",
-    "编程/C井/System.Object.md",
-    "().md",
-    "Image Collection/Pasted image 20230823155619.png",
-    "渲染/Unity/Mesh.md",
-    "渲染/OpenGL/glBufferData.md",
-    "渲染/OpenGL/VBO.md",
-    "渲染/OpenGL/缓冲区对象.md",
     "渲染/OpenGL",
     "编程",
-    "白皮书/Marker.md",
-    "编程/端/创建地图视图.md",
-    "编程/端/地图放在Fragment里切换.md",
-    "工作渲染引擎/引擎/瓦片缓存策略.md",
-    "编程/端/What?!.md",
-    "渲染/Unity/Draw Call Optimization.md",
-    "渲染/模型文件.md",
-    "编程/C++/Basic/3 Data Types.md",
-    "编程/C++/Basic/7 Function template.md",
-    "编程/C++/Basic/1 Compiling your source code.md",
-    "编程/MIT-Missing-Semester/The Shell.md",
-    "工作渲染引擎/端上/Pasted image 20230728110014.png",
-    "![Pasted.md",
     "工作渲染引擎/引擎",
     "工作渲染引擎/端上",
     "工作渲染引擎",
-    "编程/端/impl实现类.md",
-    "白皮书/绘制POI.md",
-    "白皮书/绘制气泡.md",
-    "编程/C++/Basic/Data Definition/Non-trivial.md",
-    "渲染",
-    "编程/C++/Basic/Assert 断言.md",
-    "编程/C++/Basic",
-    "白皮书",
-    "baseOverlay.png",
-    "MarkerAvoidRouteRule.png",
-    "OverlayType.png",
-    "Overlay白皮书",
-    "Pasted image 20230619173213.png",
-    "Pasted image 20230619173201.png"
+    "渲染"
   ]
 }

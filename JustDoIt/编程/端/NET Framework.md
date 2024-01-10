@@ -1,4 +1,7 @@
 
+本机代码通常指的是使用本机编程语言（如C++、C等）编写的代码。与本机编程语言相对应的是托管语言（如C#、Java等），托管语言的代码在运行时由相应的虚拟机（如.NET CLR、Java虚拟机）解释和执行。
+
+---
 ## 特性
 
 **1. EASY DEVELOPMENT**
@@ -15,6 +18,7 @@ Working of .NET JIT(just in time) Compiler
 ![[Pasted image 20230823160120.png]]
 
 
+---
 ## 架构
 
 .NET architecture consists of three components.

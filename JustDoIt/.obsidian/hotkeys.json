@@ -8,14 +8,6 @@
       "key": "E"
     }
   ],
-  "editor:toggle-code": [
-    {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": "L"
-    }
-  ],
   "editor:toggle-checklist-status": [],
   "editor:toggle-blockquote": [
     {
@@ -49,6 +41,22 @@
         "Mod"
       ],
       "key": "U"
+    }
+  ],
+  "editor:insert-codeblock": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "L"
+    }
+  ],
+  "editor:toggle-code": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "L"
     }
   ]
 }

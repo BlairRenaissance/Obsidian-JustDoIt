@@ -10,6 +10,8 @@
 - Atrace工具？
 - 全局阴影实现？
 - VBO绑定glbuffer的方式
+- 合并uniform减少drawcall
+- metal：commond encode
 
 
 
