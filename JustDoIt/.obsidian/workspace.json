@@ -4,22 +4,49 @@
     "type": "split",
     "children": [
       {
-        "id": "f785a1f1dac305d7",
+        "id": "7397c06298843de7",
         "type": "tabs",
         "children": [
           {
-            "id": "5efc17db43fe098d",
+            "id": "515b943fa471b469",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/HD道路响应阴影 - 接口与备注.md",
+                "file": "渲染/图形API/Metal/Metal Programming.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Metal Programming"
+            }
+          },
+          {
+            "id": "31d6611e892e8525",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.4"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.4"
+            }
+          },
+          {
+            "id": "9612473329a52fa3",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.5"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.5"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -39,7 +66,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -48,13 +77,15 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "native",
                 "matchingCase": false,
-                "explainSearch": false,
+                "explainSearch": true,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -62,7 +93,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -85,15 +118,17 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/HD道路响应阴影 - 接口与备注.md",
-                "collapseAll": false,
+                "file": "渲染/图形API/Metal/Metal Programming.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Metal Programming"
             }
           },
           {
@@ -102,10 +137,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/HD道路响应阴影 - 接口与备注.md",
+                "file": "渲染/图形API/Metal/Metal Programming.md",
                 "linksCollapsed": true,
-                "unlinkedCollapsed": true
-              }
+                "unlinkedCollapsed": false
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Metal Programming"
             }
           },
           {
@@ -116,7 +153,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -125,8 +164,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/HD道路响应阴影 - 接口与备注.md"
-              }
+                "file": "渲染/图形API/Metal/Metal Programming.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Metal Programming"
             }
           },
           {
@@ -138,7 +179,9 @@
                 "sortOrder": "frequency",
                 "showSearch": false,
                 "searchQuery": ""
-              }
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
             }
           }
         ],
@@ -146,7 +189,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 220.5
+    "width": 220.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -158,53 +202,53 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5efc17db43fe098d",
+  "active": "f9bef235a159df84",
   "lastOpenFiles": [
-    "编程/端/Android 图形显示简述.md",
-    "渲染/模型文件.md",
-    "编程/C++/经典问题.md",
-    "编程/C++/基础.md",
-    "编程/典型问题.md",
-    "Android 图形显示简述.md",
-    "渲染/OpenGL/OpenGL.md",
-    "渲染/AO 环境光遮蔽.md",
-    "渲染/SDF 有向距离场.md",
-    "渲染/Unity/Draw Call Optimization.md",
-    "编程/代码规范.md",
-    "编程/面试.md",
-    "编程/C++/Basic/Assert 断言.md",
-    "编程/C++/Basic/7.md",
-    "编程/C++/Basic/6.md",
-    "编程/C++/Basic/5 Type deduction 类型推断.md",
-    "编程/C++/Basic/4.md",
-    "编程/C++/Basic/3.md",
-    "编程/C++/Basic/2 Preprocessor 预处理器.md",
-    "工作/楼楼.md",
-    "工作/HD道路响应阴影 - 接口与备注.md",
-    "Screenshot_2023-11-14-17-30-38-145_lockscreen.jpg",
-    "编程/C++/Basic/Data Definition/Non-trivial.md",
-    "编程/C++/Basic/Data Definition/POD.md",
-    "渲染/纹理压缩.md",
-    "渲染/碰撞算法.md",
-    "工作/楼块相机碰撞功能接口.md",
-    "Pasted image 20231107113824.png",
-    "编程/webserver.pdf",
-    "Image Collection/Pasted image 20231018172917.png",
-    "Pasted image 20231018172837.png",
-    "Pasted image 20231018172917.png",
-    "Image Collection/Pasted image 20231017230114.png",
-    "Image Collection/Pasted image 20231018171228.png",
-    "Pasted image 20231018171228.png",
-    "Image Collection/Pasted image 20231018162805.png",
-    "Pasted image 20231018162805.png",
-    "渲染/图形学",
-    "工作",
-    "Image Collection",
-    "渲染/OpenGL",
-    "编程",
-    "工作渲染引擎/引擎",
-    "工作渲染引擎/端上",
-    "工作渲染引擎",
-    "渲染"
+    "渲染/图形API/LearnOpenGL/4. LearnOpenGL - Advanced OpenGL.md",
+    "渲染/Topics/引擎阅读.md",
+    "渲染/图形引擎/游戏引擎架构/2. 引擎动画框架.md",
+    "渲染/图形引擎/游戏引擎架构/1. 引擎基础知识.md",
+    "渲染/图形API/Metal/Metal Programming.md",
+    "编程/端/impl实现类.md",
+    "编程/端/handler.post.md",
+    "编程/端/地图放在Fragment里切换.md",
+    "编程/端/NET Framework.md",
+    "渲染/图形引擎/Unity/Topics/Job System.md",
+    "渲染/图形引擎/Unity/Mesh.md",
+    "渲染/图形引擎/Unity/Topics/Threads.md",
+    "渲染/图形引擎/Unity/Topics/Unity与本机代码的交互.md",
+    "渲染/图形引擎/Unity/Topics/Draw Call Optimization.md",
+    "渲染/图形引擎/Unity/Topics/将 Unity 集成到 Android 应用程序中.md",
+    "渲染/图形引擎/Unity/Topics/Unity Tool Kit.md",
+    "渲染/图形引擎/Unity/Topics",
+    "渲染/图形引擎/Unity/Tools/Xcode帧调试器.md",
+    "渲染/图形引擎/Unity/Tools/Memory Profiler.md",
+    "Toolkit/Xcode截帧工具.md",
+    "渲染/图形引擎/Unity/《Unity Shader入门精要》/0. 语法Q&A.md",
+    "渲染/图形引擎/Unity/Shader/UNITY_Z_0_FAR_FROM_CLIPSPACE.md",
+    "渲染/图形引擎/Unity/Shader/ConstantBuffer.md",
+    "渲染/图形引擎/Unity/《Unity Shader入门精要》/1. 基础Shader -《Unity Shader入门精要》.md",
+    "渲染/图形引擎/Unity/《Unity Shader入门精要》/4. 透明效果 -《Unity Shader入门精要》.md",
+    "渲染/图形引擎/Unity/《Unity Shader入门精要》/3. 纹理 -《Unity Shader入门精要》.md",
+    "渲染/图形引擎/Unity/《Unity Shader入门精要》/2. 光照 -《Unity Shader入门精要》.md",
+    "Pasted image 20241018110935.png",
+    "渲染/渲染基础",
+    "渲染/图形引擎/游戏引擎架构",
+    "渲染/图形引擎",
+    "渲染/图形API/Metal",
+    "渲染/图形API/LearnOpenGL",
+    "渲染/图形API",
+    "Pasted image 20240725120219.png",
+    "Pasted image 20240705172142.png",
+    "Pasted image 20240705130109.png",
+    "Pasted image 20240605173141.png",
+    "Pasted image 20240604203721.png",
+    "课程",
+    "编程/C++/项目/webserver.pdf",
+    "Image Collection/Pasted image 20231017203607.png",
+    "Image Collection/Pasted image 20231016165115.png",
+    "Image Collection/Pasted image 20231017205325.png",
+    "Image Collection/Pasted image 20231017213228.png",
+    "面试"
   ]
 }

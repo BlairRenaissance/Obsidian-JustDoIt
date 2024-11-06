@@ -7,24 +7,18 @@
 **1. EASY DEVELOPMENT**
 
 Language Interoperability (两种语言间的互操作性) And Extended Class Library
-
-![[Pasted image 20230823155619.png]]
-
+![](https://raw.githubusercontent.com/BlairRenaissance/ImageHost/main/Pasted%20image%2020230823155619.png)
 
 **2. HIGH PERFORMANCE**
 
 Working of .NET JIT(just in time) Compiler
-
-![[Pasted image 20230823160120.png]]
-
+![](https://raw.githubusercontent.com/BlairRenaissance/ImageHost/main/Pasted%20image%2020230823160120.png)
 
 ---
 ## 架构
 
 .NET architecture consists of three components.
-
-![[Pasted image 20230823163818.png]]
-
+![](https://raw.githubusercontent.com/BlairRenaissance/ImageHost/main/Pasted%20image%2020230823163818.png)
 
 **1. Common Language Runtime** (CLR)
 
@@ -36,8 +30,7 @@ handles running apps and manages other system services. Such as Memory / Garbage
 **2. Library**
 
 	reusable code that can be called to preform a specific task.
-
-![[Pasted image 20230823162345.png]]
+![](https://raw.githubusercontent.com/BlairRenaissance/ImageHost/main/Pasted%20image%2020230823162345.png)
 
 
 **3. Languages**

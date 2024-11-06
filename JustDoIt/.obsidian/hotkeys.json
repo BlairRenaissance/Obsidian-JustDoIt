@@ -58,5 +58,13 @@
       ],
       "key": "L"
     }
+  ],
+  "editor:toggle-highlight": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "U"
+    }
   ]
 }

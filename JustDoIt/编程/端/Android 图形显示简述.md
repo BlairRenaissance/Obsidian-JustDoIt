@@ -1,12 +1,23 @@
+#Android  
 
-`Android` 图形 `Graphic` 和显示 `Display` 是两个独立的部分，这里放在一起简述；介绍了图像和显示相关的基本概念，比如 `BufferQueue` 生产者消费者模型， `Surface/SurfaceFlinger` 图形合成等等。
+> 介绍Android图形和显示相关的基本概念。
 
-## 概念
+# 图形
 
-应用开发者可通过两种方式将图像绘制到屏幕上：使用 `Canvas` 或 `OpenGL` ：
+> Android 框架提供了各种用于 2D 和 3D 图形渲染的 API，可与制造商的图形驱动程序实现代码交互，因此，务必更好地了解这些 API 的工作原理。本页介绍了在其上构建这些驱动程序的图形硬件抽象层 (HAL)。
 
-- `android.graphics.Canvas` 是一个 `2D` 图形 `API` ， `Canvas API` 通过一个名为 `OpenGLRenderer` 的绘制库实现硬件加速，该绘制库将 `Canvas` 运算转换为 `OpenGL` 运算，以便它们可以在 `GPU` 上执行。从 `Android 4.0` 开始，硬件加速的 `Canvas` 默认情况下处于启用状态
-- 除了 `Canvas`，开发者渲染图形的另一个主要方式是使用 `OpenGL ES` 直接渲染到 `Surface` 。 `Android` 在 `Android.opengl` 软件包中提供了 `OpenGL ES` 接口
+应用开发者可通过三种方式将图像绘制到屏幕上：使用[Canvas](https://source.android.com/docs/core/graphics/arch-sh?hl=zh-cn#canvas)、[OpenGL ES](https://source.android.com/docs/core/graphics/arch-egl-opengl?hl=zh-cn) 或 [Vulkan](https://source.android.com/docs/core/graphics/arch-vulkan?hl=zh-cn)。
+
+## Android 图形组件
+
+无论开发者使用什么渲染 API，一切内容都会渲染到 **Surface** 上。Surface 表示缓冲区队列中的生产方，而缓冲区队列通常会被 SurfaceFlinger 消耗。在 Android 平台上创建的每个窗口都由 Surface 提供支持。所有可见的 Surface 都会被 SurfaceFlinger 显示到屏幕。
+
+下图显示了关键组件如何协同工作：
+![Surface 如何被渲染](https://raw.githubusercontent.com/BlairRenaissance/ImageHost/main/20240201194601.png)
+
+- Image Stream Producers：图像流生产方可以是生成图形缓冲区以供消耗的任何内容。例如 OpenGL ES、Canvas 2D 和 mediaserver 视频解码器。
+- Image Stream Consumers：图像流的最常见消费方是 SurfaceFlinger，该系统服务会消费当前可见的 Surface，并使用Window Manager 提供的信息，通过OpenGL 和 Hardware Composer 将一组 Surface合成到显示器上。SurfaceFlinger is **the only** service that can modify the content of the display. 其他 OpenGL ES 应用也可以消费图像流，例如相机应用会消费相机预览图像流。非 GL 应用也可以是消费方，例如 ImageReader 类。
+- Hardware Composer HAL：要求硬件混合渲染器Hardware Composer必须支持VSYNC和HDMI热插拔两个事件。
 
 ### EGL
 
@@ -1759,45 +1770,3 @@ void Layer::onFirstRef() {
 
 从 `Surface` 创建流程中贴出的 `Layer::onFirstRef` 代码中可以看到，在 `Layer` 中设置了 `mSurfaceFlingerConsumer->setContentsChangedListener` 监听事件，所以 `BufferQueueProducer::queueBuffer` 会触发 `Layer::onFrameAvailable` 事件，下面是完整的请求流程。  
 客户端在 `BufferQueue` 中生产完图像数据后，通知 `SurfaceFlinger` 刷新界面的流程图：
-
-[客户端通知 SurfaceFlinger 刷新，查看大图](https://upload-images.jianshu.io/upload_images/606437-4f8a5a419984488c.png)
-
-![](https://raw.githubusercontent.com/redspider110/blog-images/master/_images/0113-android-graphics-display-requestNextVsync.png)
-
-## [](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#%E5%90%8E%E7%BB%AD "后续")后续
-
-- `WMS`
-- `Layer` 合成流程
-- 结合 `Camera` 熟悉图形显示中 `Buffer` 相关流程
-- `Choreographer` 及掉帧分析
-    - [Choreographer 简析](https://www.jianshu.com/p/dd32ec35db1d)
-- 详述 `SurfaceTexture, SurfaceView, GLSurfaceView` 等区别
-- 工具 `dumpsys SurfaceFlinger` 输出的 `LOG` 分析
-- `screencap` 命令及源码分析
-- `Systrace` 性能工具分析
-    - [Systrace 官网](https://source.android.google.cn/devices/tech/debug/systrace)
-
-## [](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3 "参考文档")参考文档
-
-- [Android 图形显示 - 官网](https://source.android.google.cn/devices/graphics)
-- [Android 中 native_handle private_handle_t 的关系](https://blog.csdn.net/ear5cm/article/details/45458683)
-- **[夕阳风 - 图形显示系列文章](https://www.jianshu.com/u/f92447ae8445)**
-- **[SurfaceFlinger 系列](http://windrunnerlihuan.com/2017/04/27/Android-SurfaceFlinger-%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E4%BA%8C-SurfaceFlinger%E6%A6%82%E8%BF%B0/)**
-- [理解 VSYNC](https://blog.csdn.net/zhaizu/article/details/51882768)
-- [dp, dpi, px, density 的关系](http://www.cnblogs.com/yaozhongxiao/archive/2014/07/14/3842908.html)
-- [gityuan: SurfaceFlinger 相关](http://gityuan.com/2017/02/18/surface_flinger_2/)
-- [阿拉神农：深入理解 Surface 系统](https://blog.csdn.net/innost/article/details/47208337)
-- [图解 Surface, SurfaceFlinger 关系](https://blog.csdn.net/freekiteyu/article/details/79483406)
-- [Google Grafika](https://github.com/google/grafika)
-- [图形引擎的核心 - BufferQueue](https://blog.csdn.net/u013928208/article/details/82999075)
-- [surfaceflinger 框架 - 流程图大全](https://blog.csdn.net/xisuzun7960/article/details/81212721)
-- [BufferQueue 介绍](https://blog.csdn.net/armwind/article/details/73436532)
-- [GraphicBuffer 同步机制 - Fence](https://blog.csdn.net/jinzhuojun/article/details/39698317/)
-
-全文完
-
-本文由 [简悦 SimpRead](http://ksria.com/simpread) 优化，用以提升阅读体验
-
-使用了 全新的简悦词法分析引擎 beta，[点击查看](http://ksria.com/simpread/docs/#/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E5%BC%95%E6%93%8E)详细说明
-
-[概念](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-0)[EGL](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-1)[Surface 和 SurfaceFlinger](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-2)[WMS: WindowManagerServices](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-3)[FrameBuffer](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-4)[Gralloc](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-5)[HWC](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-6)[VSYNC 垂直刷新](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-7)[60Hz 和 16 ms](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-8)[BufferQueue](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-9)[数据流](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-10)[组件小结](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-11)[Buffer/Window 体系](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-12)[代码速查表](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-13)[native_handle/buffer_handle_t](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-14)[private_handle_t](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-15)[ANativeWindowBuffer](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-16)[ANativeWindow](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-17)[ANativeObjectBase 模板](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-18)[GraphicBuffer](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-19)[Surface](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-20)[小结](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-21)[libui 库](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-22)[代码目录结构](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-23)[GraphicBufferAllocator/GraphicBufferMapper](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-24)[GraphicBuffer](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-25)[Fence 机制](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-26)[DisplayInfo 显示信息](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-27)[libgui 库](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-28)[代码目录结构](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-29)[IGraphicBufferProducer/IProducerListener 生产者](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-30)[IGraphicBufferConsumer/IConsumerListener 消费者](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-31)[BufferItem](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-32)[BufferSlot](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-33)[BufferQueueCore](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-34)[BufferQueueProducer/BufferQueueConsumer 生产者 / 消费者实现类](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-35)[BufferQueue 模型](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-36)[Surface](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-37)[ISurfaceComposer/ISurfaceComposerClient](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-38)[SurfaceControl](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-39)[IDisplayEventConnection 显示连接](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-40)[小结](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-41)[SurfaceFlinger](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-42)[代码速查表](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-43)[surfaceflinger 进程](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-44)[初始化流程](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-45)[DisplayDevice 显示设备](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-46)[Layer 层](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-47)[Surface 创建流程图](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-48)[VSYNC 垂直刷新](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-49)[客户端通知 SurfaceFlinger 刷新](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-50)[后续](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-51)[参考文档](https://redspider110.github.io/2019/04/17/0113-android-graphics-display/#sr-toc-52)
