@@ -410,3 +410,78 @@ D(D&& other) : B(std::move(other))
   ...  
 }
 ```
+
+## 结构化绑定
+
+C++17 引入的结构化绑定（structured bindings）语法。这种语法允许 `for` 循环中直接解构一个容器中的元素，特别是当容器的元素是一个键值对时。
+### 语法解析
+``` C++
+for (const auto& [sid, plugin] : instances) {
+    // 这里可以使用 _sid_ 和 _plugin_
+}
+```
+
+- `instances` 是一个容器，通常是一个 `std::map`、`std::unordered_map` 或其他类似的容器。
+- `const auto&` 表示我们希望以常量引用的方式访问容器中的元素，以避免不必要的拷贝。
+- `[sid, plugin]` 是结构化绑定的部分，它将容器中的每个键值对解构为两个变量：`sid` 和 `plugin`。`sid` 将会是键，`plugin` 将会是值。
+
+### 示例
+```C++
+#include <iostream>
+#include <map>
+#include <string>
+  
+int main() {
+    std::map<int, std::string> instances = {
+        {1, "PluginA"},
+        {2, "PluginB"},
+        {3, "PluginC"}
+    };
+
+    for (const auto& [sid, plugin] : instances) {
+        std::cout << "SID: " << sid << ", Plugin: " << plugin << std::endl;
+    }
+    return 0;
+}
+```
+
+
+## ## 使用 emplace/try_emplace/emplace_back
+
+`emplace` 系列接口可以实现原地对象构造，消除掉拷贝构造、移动构造等操作。
+
+反例：
+```C++
+std::unordered_map<std::string, Demo> demo_group;
+demo_group.insert(std::make_pair(key, Demo(value, i)));  // 案例一
+demo_group.emplace(std::make_pair(key, Demo(value, i)));  // 案例二
+```
+
+上述例子中的两个插入元素举例，都是不高效的写法，其背后执行相同的计算流程： 首先构造 `Demo` 临时对象，然后用 `std::make_pair` 生成 `pair` 临时对象，最后 `pair` 临时对象移进 `demo_group`，这里在多个技术点上有性能浪费。
+
+首先，有多个临时对象构造、移动构造带来的浪费。`Demo` 临时对象构造完之后，会执行两次 `move` 构造，第一次是生成 `pair` 对象时，第二次是进入 `demo_group` 时。`pair` 临时对象构造后也会执行一次移动构造。
+
+然后，键值对插入失败时，也有临时对象构造的消耗。上述代码会先生成 `pair` 对象，然后在 `pair` 对象插入 `demo_group` 时才去判断是否可插入。
+
+修正：
+```C++
+std::unordered_map<std::string, Demo> demo_group;
+demo_group.try_emplace(key, value, i);
+```
+
+如果插入不成功，则所有临时对象都不会构造；如果插入成功，则只会原地构造一次，不会触发移动构造。上述例子中，如果 Demo 对象不需要在插入时实时构造，则可以改为 `demo_group.emplace(key, demo)` 或者 `demo_group.emplace(key, std::move(demo))`。
+
+反例：
+```C++
+std::vector<Demo> demo_group;
+demo_group.push_back(Demo(value, 1));  // 案例一
+demo_group.emplace_back(Demo(value, 1));  // 案例二
+```
+
+上述例子中的两个案例，都是不高效的写法，其背后执行相同的计算流程：首先构造 Demo 临时对象，然后将临时对象移进 demo_group。
+
+修正：
+```C++
+std::vector<Demo> demo_group;
+demo_group.emplace_back(value, 1);
+```

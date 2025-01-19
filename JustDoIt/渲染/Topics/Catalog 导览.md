@@ -1,0 +1,40 @@
+
+## 渲染器
+
+个人总结
+[[引擎阅读]]
+
+---
+## 模型
+
+个人总结
+[[碰撞算法]]
+[[模型文件]]
+
+
+
+---
+## 反射
+
+个人总结
+
+参考文档
+https://km.woa.com/articles/show/612788?kmref=author_recommend
+
+---
+## 纹理
+
+个人总结
+[[Texture Atlas]]
+[[纹理压缩]]
+
+参考文档
+
+
+---
+## 序列化
+
+个人总结
+
+参考文档
+https://km.woa.com/articles/show/614163?kmref=article_recommend
