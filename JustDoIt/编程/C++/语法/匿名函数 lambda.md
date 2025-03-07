@@ -1,3 +1,38 @@
+## 结构解释
+
+lambda函数的语法如下：
+
+`[capture](parameters) -> return_type { body }`
+
+**示例**
+
+```C++
+std::function<std::string(int, const std::string&)> func = [](int count, const std::string& str) -> std::string {
+	std::string result; 
+	for (int i = 0; i < count; ++i) { 
+		result += str;
+	}
+	return result;
+};
+
+// 调用 lambda 函数 
+std::string result = func(3, "Hello");
+```
+#### 1. 捕获列表 `[]`
+
+捕获列表表示lambda函数需要捕获的外部变量。
+
+#### 2. 参数列表 `()`
+
+参数列表为表示lambda函数接受的传入参数。
+
+#### 3. 返回类型 `->`
+
+箭头后的为返回类型，表示lambda函数返回的类型。
+
+#### 4. 函数体 `{ ... }`
+
+包含lambda函数的代码。
 
 ## 捕获方式
 

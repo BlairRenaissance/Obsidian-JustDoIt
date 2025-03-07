@@ -1,3 +1,199 @@
+
+## `std::shared_ptr` 循环引用
+
+`std::shared_ptr` 确实存在循环引用（也称为循环依赖）的风险。循环引用发生在两个或多个对象相互引用对方，形成一个环，这会导致引用计数永远不会变为零，从而导致内存泄漏。
+
+```C++
+#include <iostream>  
+#include <memory>  
+  
+class B; // 前向声明  
+  
+class A {  
+public:  
+	std::shared_ptr<B> b_ptr;  
+	~A() { std::cout << "A destroyed" << std::endl; }  
+};  
+  
+class B {  
+public:  
+	std::shared_ptr<A> a_ptr;  
+	~B() { std::cout << "B destroyed" << std::endl; }  
+};  
+  
+int main() {  
+	auto a = std::make_shared<A>();  
+	auto b = std::make_shared<B>();  
+	  
+	a->b_ptr = b;  
+	b->a_ptr = a;  
+	  
+	// 此时，a 和 b 互相引用，形成循环引用  
+	return 0;  
+}
+```
+
+在这个示例中，`A` 和 `B` 互相引用对方，形成了一个循环引用。即使在 `main` 函数结束时，`a` 和 `b` 超出了作用域，它们的引用计数也不会变为零，因此它们不会被销毁，导致内存泄漏。
+
+为了避免循环引用，可以使用 `std::weak_ptr`。`std::weak_ptr` 是一种不增加引用计数的智能指针，它可以安全地打破循环引用。
+
+```C++
+class B {  
+public:  
+	std::weak_ptr<A> a_ptr; // 使用 std::weak_ptr 打破循环引用  
+	~B() { std::cout << "B destroyed" << std::endl; }  
+};
+```
+
+## 指针解引用
+
+==一个 Object 对象的指针 Object* 解引用得到的是对象的引用 Object& ref。==
+
+```C++
+std::aligned_storage_t<sizeof(Object), alignof(Object)> objectStorage; 
+Object& object() { return *reinterpret_cast<Object*>(&objectStorage); }
+```
+
+代码解释
+1. **`std::aligned_storage_t<sizeof(Object), alignof(Object)> objectStorage;`**:
+    - `objectStorage` 是一个未初始化的存储空间，大小和对齐方式与 `Object` 类型相同。
+    
+2. **`reinterpret_cast<Object*>(&objectStorage)`**:
+    - `&objectStorage` 获取 `objectStorage` 的地址，类型为 `void*`。
+    - `reinterpret_cast<Object*>(&objectStorage)` 将这个地址转换为 `Object*` 类型的指针。
+    
+3. **`*reinterpret_cast<Object*>(&objectStorage)`**:
+    - 解引用 `Object*` 类型的指针，得到该指针所指向的对象。
+    - 由于解引用操作返回的是对象的引用，所以 `*reinterpret_cast<Object*>(&objectStorage)` 的类型是 `Object&`。
+
+简单示例
+
+```C++
+struct Object {  
+	int data;  
+	Object(int d) : data(d) {}  
+};  
+  
+int main() {  
+	Object obj(42); // 创建一个 Object 对象  
+	Object* ptr = &obj; // 获取对象的指针  
+	  
+	// 解引用指针，得到对象的引用  
+	Object& ref = *ptr;  
+	  
+	// 通过引用访问对象的成员  
+	std::cout << "Object data: " << ref.data << std::endl;  
+	  
+	// 修改引用所指向的对象  
+	ref.data = 100;  
+	std::cout << "Modified object data: " << obj.data << std::endl;  
+	  
+	return 0;  
+}
+```
+
+## `std::function`
+
+`std::function` 是 C++11 引入的一个通用多态函数封装器。它可以存储、复制和调用任何可调用目标（如函数、lambda 表达式、绑定表达式或其他函数对象），其行为类似于函数指针，但`std::function` 可以存储状态（例如，lambda 表达式捕获的变量），这使得它比普通函数指针更强大。
+
+`std::function<void*()>` 是一个特化的 `std::function` 类型，它表示一个可调用对象，该对象不接受任何参数并返回一个 `void*` 类型的指针。
+- `void*`：表示返回类型是一个指向任意类型的指针。
+- `()`：表示该函数不接受任何参数。
+
+**注意事项**
+- `std::function` 会引入一些额外的开销，因为它需要进行类型擦除和动态分配内存。因此，在性能关键的代码中，可能需要权衡其灵活性和性能。
+- 使用lambda函数时要尤其注意，不能将函数内临时变量的地址传递到外部。除非这个临时变量是个static静态变量（不建议用）。
+
+
+**使用普通函数**
+
+```C++
+#include <iostream> 
+#include <functional>
+
+void* MyFunction() {
+	static int value = 42;
+	return &value; 
+}  
+
+int main() {
+	std::function<void*()> func = MyFunction;
+	void* result = func();
+	std::cout << "Result: " << *static_cast<int*>(result) << std::endl;
+	return 0;
+}
+```
+
+**使用 lambda 表达式**
+
+```C++
+#include <iostream> 
+#include <functional>
+
+int main() {
+	std::function<void*()> func = []() -> void* {
+		static int value = 42;
+		return &value;
+	};
+	
+	void* result = func();
+	std::cout << "Result: " << *static_cast<int*>(result) << std::endl;
+	return 0;
+}
+```
+
+**使用 std::bind**
+
+```C++
+#include <iostream> 
+#include <functional>  
+void* MyFunction() {
+	static int value = 42;
+	return &value;
+}  
+
+int main() {
+	auto boundFunc = std::bind(MyFunction);
+	std::function<void*()> func = boundFunc;
+	void* result = func();
+	std::cout << "Result: " << *static_cast<int*>(result) << std::endl;
+	return 0; 
+}
+```
+
+**适用场景**
+
+`std::function<void*()>` 可以用于以下场景：
+
+1. **回调函数**：当你需要传递一个回调函数，并且该回调函数不接受参数但返回一个 `void*` 指针时，可以使用 `std::function<void*()>`。
+2. **多态函数对象**：当你需要存储和调用不同类型的可调用对象（如函数、lambda 表达式、函数对象等），并且这些对象具有相同的签名时，可以使用 `std::function`。
+3. **事件处理**：在事件驱动的编程中，可以使用 `std::function` 来存储和调用事件处理函数。
+
+
+## 链式调用
+
+``` C++
+world->GetFogUniformSetter()-> SetGlobalFogVertexUniforms(vs_ubo).SetGlobalFogFragmentUniforms(fs_ubo);
+```
+
+链式调用（method chaining）的编程风格允许在一行代码中连续调用多个成员函数，从而使代码更加简洁和易读。
+
+链式调用的关键在于每个成员函数返回一个对象的引用（通常是 `*this`），这样就可以在返回的对象上继续调用其他成员函数。
+
+在 `FogUniformSetter` 类中，`SetGlobalFogVertexUniforms` 和 `SetGlobalFogFragmentUniforms` 函数都返回了 `*this`，即当前对象的引用。这使得可以在调用 `SetGlobalFogVertexUniforms` 后，继续调用 `SetGlobalFogFragmentUniforms`，如下所示：
+
+``` C++
+FogUniformSetter & SetGlobalFogVertexUniforms(ubo_class & ubo) {
+    // ...
+    return *this; // 返回当前对象的引用
+}
+
+FogUniformSetter & SetGlobalFogFragmentUniforms(ubo_class & ubo) {
+    // ...
+    return *this; // 返回当前对象的引用
+}
+```
+
 ## extern
 
 **extern**
@@ -371,50 +567,10 @@ int main()
 总的来说，如果你需要频繁地查找元素，并且元素的顺序很重要，那么 `std::map` 是一个很好的选择。如果你需要频繁地插入和删除元素，并且对元素的顺序没有要求，那么 `std::unordered_map` 是一个很好的选择。
 
 
-## 初始化列表
-
-**在派生类的构造函数中，基类的构造函数可以通过初始化列表来调用**
-
-在C++中，类的继承是通过在派生类名后面跟随一个冒号(:)，然后是基类的名称来定义的。这个基类可以是任何有效的类类型，包括其他类。
-
-在派生类的构造函数中，基类的构造函数可以通过初始化列表来调用。初始化列表的语法是冒号后面的基类名称，然后是括号括起来的参数列表。
-```
-class Base {
-public:
-    Base(int value) : value_(value) {}
-private:
-    int value_;
-};
-
-class Derived : public Base {
-public:
-    Derived(int value) : Base(value) {}
-};
-```
-在这个例子中，`Derived`类继承自`Base`类，并且在它的构造函数中调用了`Base`类的构造函数。这个构造函数的参数是`value`，它被传递给`Base`类的构造函数。
-
-
-**基类的移动构造函数也可以通过初始化列表来调用**
-
-假如class B重载了移动构造函数，class D继承clss B。为了确保移动语义适用于D从B继承来的那部分，我们需要为D提供移动构造函数。这样是不对的：
-```
-D(D&& other) : B(other)  
-{  
-  ...  
-}
-```
-因为other是一个左值，B(other)会调用B(const B&)函数，而不是移动构造函数。正确的写法是：
-```
-D(D&& other) : B(std::move(other))  
-{  
-  ...  
-}
-```
-
 ## 结构化绑定
 
 C++17 引入的结构化绑定（structured bindings）语法。这种语法允许 `for` 循环中直接解构一个容器中的元素，特别是当容器的元素是一个键值对时。
-### 语法解析
+
 ``` C++
 for (const auto& [sid, plugin] : instances) {
     // 这里可以使用 _sid_ 和 _plugin_
@@ -425,7 +581,7 @@ for (const auto& [sid, plugin] : instances) {
 - `const auto&` 表示我们希望以常量引用的方式访问容器中的元素，以避免不必要的拷贝。
 - `[sid, plugin]` 是结构化绑定的部分，它将容器中的每个键值对解构为两个变量：`sid` 和 `plugin`。`sid` 将会是键，`plugin` 将会是值。
 
-### 示例
+示例
 ```C++
 #include <iostream>
 #include <map>
@@ -485,3 +641,177 @@ demo_group.emplace_back(Demo(value, 1));  // 案例二
 std::vector<Demo> demo_group;
 demo_group.emplace_back(value, 1);
 ```
+
+# 类的初始化
+
+1. 类成员变量初始化
+	- 非静态成员
+	- 静态成员
+	- const和引用成员
+	- 类内初始化（C++11）
+	- 初始化列表的使用
+2. 构造函数相关
+	- 默认构造函数
+	- 拷贝/移动构造函数
+	- 委托构造函数
+	- 继承构造函数（C++11）
+3. 派生类初始化
+	- 基类构造顺序
+	- 虚基类初始化
+	- 成员初始化顺序
+4. 特殊成员初始化
+	- 数组成员
+	- 聚合类初始化
+	- 位域初始化
+5. 静态成员初始化
+	- 静态常量
+	- 静态非常量
+	- inline静态成员（C++17）
+6. 函数默认参数与重载
+	- 默认参数规则
+	- 重载冲突问题
+7. 异常处理
+
+## 类成员变量的初始化
+
+**==类成员变量的初始化不能直接在类定义中进行，除非它们是静态常量成员。==**
+
+C++的编译模型是基于翻译单元的，每个源文件（.cpp文件）被单独编译成目标文件（.o或.obj文件），然后链接在一起。类定义通常放在头文件中，而头文件可能会被多个源文件包含。如果在类定义中直接初始化非静态成员变量，那么每个包含该头文件的源文件都会有一份该成员变量的初始化代码，这会导致重复定义的问题。
+
+在C++中，构造函数的主要职责之一就是初始化类的成员变量。通过在构造函数中初始化成员变量，可以确保在对象创建时，所有成员变量都被正确初始化。这种方式也使得初始化逻辑更加集中和清晰。
+
+静态常量成员变量在类的所有实例中共享，并且它们的值在编译时就已经确定。因此，可以在类定义中直接初始化静态常量成员变量。这种初始化方式不会导致重复定义的问题，因为静态成员变量在类的所有实例中只有一份。
+
+非法：
+```C++
+class BaseFunction {
+    // 构造函数
+    BaseFunction();
+    
+    // camera
+    Camera cameraEntity(glm::vec3(0.0f, 0.0f, 3.0f)); // *** 会报错 ***
+```
+
+**==常量成员（`const`）和引用成员（`&`）必须在初始化列表中进行初始化，因为它们在对象的生命周期内不能被赋值。==**
+
+```C++
+class Example { 
+public: 
+    Example(int value) : constValue(value), refValue(value) {} 
+    
+private: 
+    const int constValue; 
+    int& refValue; 
+};
+```
+
+==**使用初始化列表可以避免不必要的默认构造和赋值操作，从而提高性能。**== 对于类类型的成员变量，初始化列表可以直接调用其构造函数，而在构造函数体内进行赋值则会先调用默认构造函数，然后再调用赋值运算符，这可能会导致不必要的性能开销。
+
+
+## 函数默认参数
+
+在C++中，函数重载是允许的，但有一些规则需要遵循。函数重载的基本规则是函数名相同，但参数列表必须不同。参数列表的不同可以是参数的类型、参数的数量，或者参数的顺序。
+
+然而，**默认参数**在函数重载中可能会引起一些问题。具体来说，如果两个重载函数的参数列表在考虑默认参数后变得相同，编译器将无法区分它们，从而导致编译错误。比如：
+
+```C++
+GLFWwindow* CreateWindowContext();
+
+GLFWwindow* CreateWindowContext(const unsigned int SCR_WIDTH = 800, const unsigned int SCR_HEIGHT = 600, const char* windowName = "Hello window");
+```
+
+在这种情况下，编译器无法区分调用 `CreateWindowContext()` 时应该使用哪个函数。因此，这种重载是不允许的。
+
+1. **默认参数**（如 `position = glm::vec3(0.0f)`）
+    - **==默认参数必须写在 头文件 的函数/构造函数声明中**==，否则，如果分散在cpp文件中，可能会有一个文件给了默认值但另一个问题不知道的问题。
+    
+2. **成员初始化列表** 属于构造函数的**实现细节**，因此：
+	- 如果构造函数在头文件中**内联定义**（直接在类声明中实现），成员初始化列表写在头文件。
+	- 如果构造函数在源文件（.cpp）中**外部定义**，成员初始化列表写在源文件。
+
+## 派生类的构造
+
+**基类的构造函数应该在派生类的构造函数的成员初始化列表中调用。**
+
+我们先来看一串代码：**注意第15、16行**
+
+```C++
+class TestBase
+{
+public:
+	TestBase() {}
+	TestBase(TestBase*) {}
+	virtual ~TestBase() {}
+};
+
+class Test : public TestBase {
+public:
+	Test(TestBase*);
+	~Test() {}
+};
+
+Test::Test(TestBase* xxx) {
+	TestBase(xxx); // ***** 这里有问题 *****
+}
+
+int main() {
+	auto x = new Test(nullptr);
+	return 0;
+}
+```
+
+它能编译成功吗？
+……
+No，无法编译通过！
+
+我们来看看原因：
+这里的错误是因为在 Test 类的构造函数实现中，`TestBase(xxx);` 这一行代码试图调用 TestBase 类的构造函数来初始化 Test 类的基类部分。然而，这种写法是错误的，因为基类的构造函数应该在派生类的构造函数的成员初始化列表中调用。
+
+在 C++ 中，当一个派生类的对象被创建时，基类的构造函数会在派生类的构造函数之前被调用。因此，为了正确地初始化基类部分，需要在派生类的构造函数的成员初始化列表中调用基类的构造函数。在这个例子中，需要将 `TestBase(xxx);` 改为 `: TestBase(xxx)`，并将其放在 Test 类的构造函数的定义之前。
+
+以下是正确的写法：
+
+```
+Test::Test(TestBase* xxx) : TestBase(xxx) {
+}
+```
+
+这里，我们在 Test 类的构造函数的定义之前添加了 `: TestBase(xxx)`，这样就可以正确地调用 TestBase 类的构造函数，将 xxx 传递给它。这种写法满足了 C++ 的规则，因此代码可以正确编译和运行。
+
+在C++中，类的继承是通过在派生类名后面跟随一个冒号(:)，然后是基类的名称来定义的。这个基类可以是任何有效的类类型，包括其他类。
+
+在派生类的构造函数中，基类的构造函数可以通过初始化列表来调用。初始化列表的语法是冒号后面的基类名称，然后是括号括起来的参数列表。
+```
+class Base {
+public:
+    Base(int value) : value_(value) {}
+private:
+    int value_;
+};
+
+class Derived : public Base {
+public:
+    Derived(int value) : Base(value) {}
+};
+```
+在这个例子中，`Derived`类继承自`Base`类，并且在它的构造函数中调用了`Base`类的构造函数。这个构造函数的参数是`value`，它被传递给`Base`类的构造函数。
+
+
+**基类的移动构造函数也可以通过初始化列表来调用**
+
+假如class B重载了移动构造函数，class D 继承 class B。为了确保移动语义适用于D从B继承来的那部分，我们需要为D提供移动构造函数。这样是不对的：
+```
+D(D&& other) : B(other)  
+{  
+  ...  
+}
+```
+
+因为other是一个左值，B(other)会调用B(const B&)函数，而不是移动构造函数。正确的写法是：
+```
+D(D&& other) : B(std::move(other))  
+{  
+  ...  
+}
+```
+
