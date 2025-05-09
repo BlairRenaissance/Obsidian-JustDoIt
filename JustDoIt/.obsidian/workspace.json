@@ -4,67 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "7397c06298843de7",
+        "id": "832653c168117452",
         "type": "tabs",
         "children": [
           {
-            "id": "6a53b3d43f181ce8",
+            "id": "ea1de51c1520ce0c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "编程/C++/C++语法经典问题.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "C++语法经典问题"
-            }
-          },
-          {
-            "id": "d4ded95d2fd1bf0e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "编程/C++/C++ 101/编译器 Compiler.md",
+                "file": "编程/C++/C++ 101/2. Basic/编译器 Compiler.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "编译器 Compiler"
             }
-          },
-          {
-            "id": "2a80f0daacda1cb5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "编程/C++/C++ 101/C++ 101.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "C++ 101"
-            }
-          },
-          {
-            "id": "6e94491709dede04",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "渲染/图形API/Metal/Metal Programming Guide/1. 指令组织.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1. 指令组织"
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -96,10 +53,10 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "command",
+                "query": "static",
                 "matchingCase": false,
                 "explainSearch": false,
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               },
@@ -121,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 259.50390243530273
+    "width": 309.50390243530273
   },
   "right": {
     "id": "105a2809d8876157",
@@ -137,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "渲染/图形API/Metal/Metal Programming.md",
+                "file": "编程/C++/C++ 101/7. Scope, Duration, and Linkage/跨多个文件共享全局常量.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Metal Programming"
+              "title": "Backlinks for 跨多个文件共享全局常量"
             }
           },
           {
@@ -156,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "渲染/图形API/Metal/Metal Programming.md",
+                "file": "编程/C++/C++ 101/7. Scope, Duration, and Linkage/跨多个文件共享全局常量.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Metal Programming"
+              "title": "Outgoing links from 跨多个文件共享全局常量"
             }
           },
           {
@@ -171,7 +128,9 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "Tags"
@@ -183,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "编程/C++/C++ 101/C++ 101.md",
+                "file": "编程/C++/C++ 101/2. Basic/编译器 Compiler.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of C++ 101"
+              "title": "Outline of 编译器 Compiler"
             }
           },
           {
@@ -211,7 +170,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 241.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -224,37 +183,41 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "2a80f0daacda1cb5",
+  "active": "ea1de51c1520ce0c",
   "lastOpenFiles": [
-    "编程/C++/语法/C++类的初始化.md",
-    "编程/C++/语法/C++的四种类型转换.md",
-    "编程/C++/C++ 101/C++ 101.md",
-    "编程/C++/C++ 101/运行时库.md",
-    "编程/C++/C++ 101/编译器 Compiler.md",
-    "编程/C++/C++语法经典问题.md",
-    "编程/C++/C++ 101/预编译头 Precompiled Headers.md",
-    "渲染/图形API/Metal/Metal Programming Guide/1. 指令组织.md",
-    "计划.md",
-    "编程/C++/C++ 101/工具链 Toolchain.md",
-    "函数指针和成员函数指针.md",
-    "Toolkit/UML.md",
-    "Toolkit/创建自己的博客网站.md",
-    "渲染/图形API/LearnOpenGL/4. LearnOpenGL - Advanced OpenGL.md",
+    "编程/C++/C++ 101/1. Getting Started/1.9 构建配置项 Build Configurations.md",
+    "编程/C++/C++ 101/1. Getting Started/VS Code 中使用C++.md",
+    "编程/C++/C++ 101/1. Getting Started",
+    "编程/C++/C++ 101/2. Basic/2.11 头文件 Header files.md",
+    "编程/C++/C++ 101/2. Basic/2.10 预处理器 Preprocessor.md",
+    "编程/C++/C++ 101/7. Scope, Duration, and Linkage/7.2 跨多个文件共享全局常量.md",
     "Toolkit/Obsidian 高级用法.md",
-    "编程/C++/C++ 101/构建配置项 Build Configurations.md",
-    "Pasted image 20250313215707.png",
-    "静态库和动态库.md",
-    "编译型语言和解释型语言.md",
-    "编程/C++/C++ 101",
-    "编程/C++/语法/匿名函数 lambda.md",
+    "编程/C++/C++ 101/7. Scope, Duration, and Linkage/7.9 Inline functions and variables.md",
+    "编程/C++/C++ 关键字.md",
     "编程/C++/C++ 应用典型问题.md",
+    "编程/C++/C++语法经典问题.md",
+    "编程/C++/语法/C++类的初始化.md",
+    "Toolkit/UML.md",
+    "编程/C++/C++ 101/C++ 101.md",
+    "编程/C++/C++ 101/7. Scope, Duration, and Linkage",
+    "编程/C++/C++ 101/2. Basic/预编译头 Precompiled Headers.md",
+    "编程/C++/C++ 101/2. Basic",
+    "编程/C++/C++ 101/运行时库.md",
+    "编程/C++/C++ 101/2. Basic/编译器 Compiler.md",
+    "面试/编译原理.md",
     "编程/编程基础概念词典.md",
-    "课程/0. 课程计划.md",
-    "编程/C++/项目/代码规范.md",
-    "编程/C++/项目/WebServer.md",
+    "编程/C++/语法/C++的四种类型转换.md",
+    "Toolkit/NDK.md",
+    "编程/C++/C++ 101/2. Basic/工具链 Toolchain.md",
+    "渲染/Topics/模型格式.md",
+    "渲染/Topics/碰撞算法.md",
+    "渲染/Topics/序列化.md",
+    "渲染/Topics/引擎阅读.md",
+    "渲染/端/GLSurfaceView 简介与源码.md",
+    "Chicken Soup",
+    "Pasted image 20250313215707.png",
+    "编程/C++/C++ 101",
     "编程/C++/项目/webserver.pdf",
-    "静态多态和动态多态.md",
-    "渲染/渲染基础/渲染基础概念词典.md",
     "Clipboard_Screenshot_1741158257.png",
     "Pasted image 20250304160654.png",
     "Clipboard_Screenshot_1740556240.png",
@@ -264,14 +227,10 @@
     "编程/计算机基础/《计算机系统CSAPP》",
     "Pasted image 20241218164521.png",
     "渲染/Topics/Details",
-    "渲染/图形API/移动端API通讲",
     "Pasted image 20241124172013.png",
     "Pasted image 20241124171944.png",
     "Pasted image 20241124171948.png",
     "Pasted image 20241124171625.png",
-    "编程/算法/数据结构与算法分析",
-    "编程/计算机基础/多线程",
-    "编程/计算机基础",
     "Untitled.canvas"
   ]
 }

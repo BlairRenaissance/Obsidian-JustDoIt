@@ -36,8 +36,8 @@
 	- 创建一个 stdafx.h（默认名称）文件，包含所有需要预编译的头文件。
 	- 在项目属性中启用 Precompiled Headers，并指定 `stdafx.h` 为预编译头。
 2. GCC/Clang
+	-  预编译头文件需先生成为 .gch 文件：`g++ stdafx.h`
 	- 使用 `-include` 指令指定预编译头文件：`g++ -include stdafx.h myfile.cpp`
-	- 预编译头文件需先生成为 .gch 文件：`g++ stdafx.h`
 3. MSVC
 	- `/Yu`、`/Fp`
 4. CMake 

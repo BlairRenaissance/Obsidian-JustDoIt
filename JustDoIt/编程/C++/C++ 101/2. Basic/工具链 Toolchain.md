@@ -8,6 +8,7 @@
 
 - 核心组件：
 	- 编译器：`gcc`（C）、`g++`（C++）
+		一般文档中提到 `gcc` 包含 `gcc++
 	- 链接器：`ld`（GNU Binutils）
 	- 标准库：`glibc`（C）、`libstdc++`（C++）
 	- 其他工具：`ar`（静态库）、`objdump`（反汇编）、`gdb`（调试器）
@@ -23,6 +24,7 @@
 
 - 核心组件：
 	- 编译器：`clang`（C/C++/Objective-C）
+		`clang`（C）、`clang++`（C++）、一般文档中提到 `clang` 包含 `clang++`
 	- 链接器：`lld`（LLVM 链接器）
 	- 标准库：`libc++`（C++）、`libc`（实验性 C 库）
 	- 其他工具：`llvm-ar`、`llvm-objdump`、`lldb`（调试器）
