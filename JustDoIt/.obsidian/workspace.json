@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "编程/C++/C++ 101/7. Enums and Structs/7.4 Class templates.md",
+                "file": "编程/C++/C++ 101/8. Classes/8.1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "7.4 Class templates"
+              "title": "8.1"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300.50390243530273
+    "width": 343.50390243530273
   },
   "right": {
     "id": "105a2809d8876157",
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "编程/C++/C++ 101/7. Enums and Structs/7.4 Class templates.md",
+                "file": "编程/C++/C++ 101/8. Classes/8.1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 7.4 Class templates"
+              "title": "Outline of 8.1"
             }
           },
           {
@@ -185,8 +185,18 @@
   },
   "active": "149bb057d09a018f",
   "lastOpenFiles": [
-    "编程/C++/C++ 101/5. Function/5.4 Function templates 函数模板.md",
     "编程/C++/C++ 101/7. Enums and Structs/7.4 Class templates.md",
+    "编程/C++/C++ 101/8. Classes/8.1.md",
+    "编程/C++/C++ 101/8. Classes",
+    "编程/C++/C++ 101/lambdas 匿名函数.md",
+    "编程/C++/C++ 101/运行时库.md",
+    "编程/C++/语法/C++类的初始化.md",
+    "编程/C++/语法/C++的四种类型转换.md",
+    "编程/Csharp/System.Object.md",
+    "编程/Csharp/Reflection 反射机制.md",
+    "编程/Csharp/Boxing and Unboxing.md",
+    "编程/C++/C++ 101/5. Function/5.5 Non-type template parameters.md",
+    "编程/C++/C++ 101/5. Function/5.4 Function templates 函数模板.md",
     "编程/C++/C++ 101/1. Getting Started/1.1 C++ 101.md",
     "编程/C++/C++ 101/7. Enums and Structs/7.3 Struct.md",
     "编程/C++/C++ 101/6. References and Pointers/6.3 Return by reference and return by address.md",
@@ -202,17 +212,8 @@
     "渲染/图形API/LearnOpenGL/4. LearnOpenGL - Advanced OpenGL.md",
     "渲染/图形API/LearnOpenGL/1. LearnOpenGL - Getting Started.md",
     "编程/C++/C++ 101/6. References and Pointers",
-    "编程/C++/C++ 101/lambdas 匿名函数.md",
     "编程/C++/C++ 101/5. Function/5.3 Default arguments 默认参数.md",
     "编程/C++/C++ 101/4. Scope/4.5 Inline 内联.md",
-    "编程/C++/C++ 101/4. Scope/4.6 跨多个文件共享全局常量.md",
-    "编程/C++/C++ 101/4. Scope/4.3 Internal Linkage 内部链接.md",
-    "编程/C++/C++ 101/3. Data Types/3.2 Const and Constexpr.md",
-    "编程/C++/C++ 101/3. Data Types/3.1 Fundamental data types.md",
-    "编程/计算机基础/多线程/3. 并发控制之无锁编程.md",
-    "编程/C++/C++ 101/2. Basic/2.10 预处理器 Preprocessor.md",
-    "编程/C++/C++ 101/5. Function/5.1 Function Overloading.md",
-    "编程/C++/C++ 101/5. Function/5.2 Function delete 删除函数.md",
     "编程/C++/C++ 101/5. Function",
     "编程/C++/C++ 101/4. Scope",
     "编程/C++/C++ 101/3. Data Types",
@@ -221,7 +222,6 @@
     "编程/C++/C++ 101/2. Basic",
     "Chicken Soup",
     "Pasted image 20250313215707.png",
-    "编程/C++/C++ 101",
     "Clipboard_Screenshot_1741158257.png",
     "Pasted image 20250304160654.png",
     "Clipboard_Screenshot_1740556240.png",
