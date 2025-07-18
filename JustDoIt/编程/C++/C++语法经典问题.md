@@ -45,53 +45,6 @@ public:
 };
 ```
 
-## 指针解引用
-
-==一个 Object 对象的指针 Object* 解引用得到的是对象的引用 Object& ref。==
-
-```C++
-std::aligned_storage_t<sizeof(Object), alignof(Object)> objectStorage; 
-Object& object() { return *reinterpret_cast<Object*>(&objectStorage); }
-```
-
-代码解释
-1. **`std::aligned_storage_t<sizeof(Object), alignof(Object)> objectStorage;`**:
-    - `objectStorage` 是一个未初始化的存储空间，大小和对齐方式与 `Object` 类型相同。
-    
-2. **`reinterpret_cast<Object*>(&objectStorage)`**:
-    - `&objectStorage` 获取 `objectStorage` 的地址，类型为 `void*`。
-    - `reinterpret_cast<Object*>(&objectStorage)` 将这个地址转换为 `Object*` 类型的指针。
-    
-3. **`*reinterpret_cast<Object*>(&objectStorage)`**:
-    - 解引用 `Object*` 类型的指针，得到该指针所指向的对象。
-    - 由于解引用操作返回的是对象的引用，所以 `*reinterpret_cast<Object*>(&objectStorage)` 的类型是 `Object&`。
-
-简单示例
-
-```C++
-struct Object {  
-	int data;  
-	Object(int d) : data(d) {}  
-};  
-  
-int main() {  
-	Object obj(42); // 创建一个 Object 对象  
-	Object* ptr = &obj; // 获取对象的指针  
-	  
-	// 解引用指针，得到对象的引用  
-	Object& ref = *ptr;  
-	  
-	// 通过引用访问对象的成员  
-	std::cout << "Object data: " << ref.data << std::endl;  
-	  
-	// 修改引用所指向的对象  
-	ref.data = 100;  
-	std::cout << "Modified object data: " << obj.data << std::endl;  
-	  
-	return 0;  
-}
-```
-
 ## `std::function`
 
 `std::function` 是 C++11 引入的一个通用多态函数封装器。它可以存储、复制和调用任何可调用目标（如函数、lambda 表达式、绑定表达式或其他函数对象），其行为类似于函数指针，但`std::function` 可以存储状态（例如，lambda 表达式捕获的变量），这使得它比普通函数指针更强大。

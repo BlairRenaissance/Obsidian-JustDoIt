@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "149bb057d09a018f",
+            "id": "3cd5368a5b99d9e5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "编程/C++/C++ 101/8. Classes/8.1.md",
+                "file": "编程/算法/双指针.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "8.1"
+              "title": "双指针"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "template <>",
+                "query": "公式",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 343.50390243530273
+    "width": 353.5
   },
   "right": {
     "id": "105a2809d8876157",
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "编程/C++/C++ 101/5. Function/5.4 Function templates 函数模板.md",
-                "linksCollapsed": true,
+                "file": "渲染/渲染数学/Quaternion 四元数.md",
+                "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 5.4 Function templates 函数模板"
+              "title": "Outgoing links from Quaternion 四元数"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "编程/C++/C++ 101/8. Classes/8.1.md",
+                "file": "编程/算法/双指针.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 8.1"
+              "title": "Outline of 双指针"
             }
           },
           {
@@ -170,10 +170,11 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
+      "remotely-save:Remotely Save": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -183,54 +184,54 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "149bb057d09a018f",
+  "active": "3cd5368a5b99d9e5",
   "lastOpenFiles": [
-    "编程/C++/C++ 101/7. Enums and Structs/7.4 Class templates.md",
-    "编程/C++/C++ 101/8. Classes/8.1.md",
+    "面试/答辩技巧-仅供参考.md",
+    "编程/算法/啊！算法地图.md",
+    "编程/算法/二分查找.md",
+    "编程/算法/KMP 算法.md",
+    "编程/算法/Graph Traversals - BFS & DFS.md",
+    "编程/C++/C++ 101/8. Classes/8.2 Constructors 构造函数.md",
+    "编程/C++/C++ 101/8. Classes/8.1 Classes 基础类.md",
+    "编程/C++/C++ 101/5. Function/5.7 无名参数 Unnamed parameters.md",
+    "编程/C++/C++ 101/4. Scope/4.1 命名空间 Namespace.md",
+    "编程/C++/C++ 101/4. Scope/4.0 单一定义规则 ODR.md",
+    "编程/C++/C++ 101/3. Data Types/3.9 类型推导 Type deduction (auto).md",
+    "编程/C++/C++ 101/3. Data Types/3.8 类型别名 Type aliases (using).md",
+    "编程/C++/C++ 101/3. Data Types/3.6 显式类型转换 Type Casting.md",
+    "编程/C++/C++ 101/3. Data Types/3.5 隐式类型转换 Implicit Type Conversion.md",
+    "编程/C++/C++ 101/3. Data Types/3.4 操作符 Operator.md",
+    "编程/C++/C++ 101/3. Data Types/3.1 基础数据类型 Fundamental data types.md",
+    "编程/C++/C++ 101/3. Data Types/3.0 数据初始化 Initialization.md",
+    "编程/C++/C++ 101/2. Basic/2.9 静态分析工具 Static Analysis Tools.md",
+    "编程/C++/C++ 101/2. Basic/2.8 捉虫 Debug.md",
+    "编程/C++/C++ 101/2. Basic/2.7 头文件 Header files.md",
+    "编程/C++/C++ 101/2. Basic/2.6 源码翻译 Translation.md",
+    "编程/C++/C++ 101/2. Basic/2.5 工具链 Toolchain.md",
+    "编程/C++/C++ 101/2. Basic/2.4 构建配置项 Build Configurations.md",
+    "编程/C++/C++ 101/2. Basic/2.3 预处理器 Preprocessor.md",
+    "编程/C++/C++ 101/2. Basic/2.2 编译器 Compiler.md",
+    "编程/C++/C++ 101/2. Basic/2.10 VS Code 中使用C++.md",
+    "渲染/渲染数学",
+    "面试/工作/接口文档",
+    "面试/工作",
+    "编程/算法/数据结构与算法分析",
+    "渲染/渲染基础",
+    "录屏2025-07-11 16.58.20.mov",
+    "Clipboard_Screenshot_1752202561.png",
+    "Pasted image 20250710110700.png",
+    "渲染/数学",
+    "编程/算法/Clipboard_Screenshot_1751276754.png",
+    "Clipboard_Screenshot_1750142949.png",
+    "Pasted image 20250617145135.png",
     "编程/C++/C++ 101/8. Classes",
-    "编程/C++/C++ 101/lambdas 匿名函数.md",
-    "编程/C++/C++ 101/运行时库.md",
-    "编程/C++/语法/C++类的初始化.md",
-    "编程/C++/语法/C++的四种类型转换.md",
-    "编程/Csharp/System.Object.md",
-    "编程/Csharp/Reflection 反射机制.md",
-    "编程/Csharp/Boxing and Unboxing.md",
-    "编程/C++/C++ 101/5. Function/5.5 Non-type template parameters.md",
-    "编程/C++/C++ 101/5. Function/5.4 Function templates 函数模板.md",
-    "编程/C++/C++ 101/1. Getting Started/1.1 C++ 101.md",
-    "编程/C++/C++ 101/7. Enums and Structs/7.3 Struct.md",
-    "编程/C++/C++ 101/6. References and Pointers/6.3 Return by reference and return by address.md",
-    "编程/C++/C++ 101/7. Enums and Structs/7.2 Scoped enum (enum class).md",
-    "编程/C++/C++ 101/7. Enums and Structs/7.1 Unscoped enum.md",
-    "编程/C++/C++ 101/3. Data Types/3.9 Type deduction (auto) 类型推导.md",
     "编程/C++/C++ 101/7. Enums and Structs",
-    "编程/C++/C++ 101/5. Function/5.6 Using function templates in multiple files.md",
-    "编程/C++/C++ 101/6. References and Pointers/6.2 Pointers.md",
-    "编程/C++/C++ 101/6. References and Pointers/6.1 Lvalue references 左值引用.md",
-    "编程/C++/C++ 101/3. Data Types/3.3 Strings & String_view.md",
-    "编程/C++/C++语法经典问题.md",
-    "渲染/图形API/LearnOpenGL/4. LearnOpenGL - Advanced OpenGL.md",
-    "渲染/图形API/LearnOpenGL/1. LearnOpenGL - Getting Started.md",
     "编程/C++/C++ 101/6. References and Pointers",
-    "编程/C++/C++ 101/5. Function/5.3 Default arguments 默认参数.md",
-    "编程/C++/C++ 101/4. Scope/4.5 Inline 内联.md",
-    "编程/C++/C++ 101/5. Function",
-    "编程/C++/C++ 101/4. Scope",
-    "编程/C++/C++ 101/3. Data Types",
-    "编程/C++/C++ 101/1. Getting Started",
-    "编程/C++/C++ 101/7. Scope, Duration, and Linkage",
-    "编程/C++/C++ 101/2. Basic",
-    "Chicken Soup",
     "Pasted image 20250313215707.png",
     "Clipboard_Screenshot_1741158257.png",
     "Pasted image 20250304160654.png",
     "Clipboard_Screenshot_1740556240.png",
     "Clipboard_Screenshot_1740555022.png",
-    "Pasted image 20241218164521.png",
-    "Pasted image 20241124172013.png",
-    "Pasted image 20241124171944.png",
-    "Pasted image 20241124171948.png",
-    "Pasted image 20241124171625.png",
     "Untitled.canvas"
   ]
 }

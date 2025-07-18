@@ -1,4 +1,4 @@
-## 5分钟理解gcc/make/makefile/CMake
+# 5分钟理解gcc/make/makefile/CMake
 
 **1. gcc**
 
@@ -28,7 +28,7 @@ cmake就可以更加简单的生成makefile文件给上面那个make用。当然
 
 到最后CMakeLists.txt文件谁写啊？—— 是你自己手写的。
 
-## 更术语的解释
+# 更术语的解释
 
 ### 什么是构建系统？为什么需要构建系统？
 
@@ -76,28 +76,73 @@ CMake是一个元构建系统工具，支持多种语言，多种Build Backend�
 
 GN文件相当于GYP文件的下一代，和GYP差别不大，但是总体上比原来的GYP文件更清晰。
 
-## CMake 实践
+# CMake 实践
 
-### 参考文档
+## 语法
 
-1. 开始使用CMake项目：[`CMake Tutorial`](https://cmake.org/cmake/help/latest/guide/tutorial/index.html#guide:CMake%20Tutorial "CMake Tutorial")
+常用 CMake 关键词分类
 
-2. 学习如何构建从互联网下载的源代码包：[`User Interaction Guide`](https://cmake.org/cmake/help/latest/guide/user-interaction/index.html#guide:User%20Interaction%20Guide "User Interaction Guide")
+| **类别**       | **常见关键词**                                                        |
+| ------------ | ---------------------------------------------------------------- |
+| 系统检测         | `APPLE`, `WIN32`, `UNIX`, `CMAKE_SYSTEM_NAME`                    |
+| 编译控制         | `CMAKE_CXX_STANDARD`, `CMAKE_BUILD_TYPE` (Debug/Release)         |
+| 路径管理         | `CMAKE_PREFIX_PATH`, `CMAKE_MODULE_PATH`, `CMAKE_INSTALL_PREFIX` |
+| 目标定义         | `add_executable()`, `add_library()`, `target_link_libraries()`   |
+| 变量操作         | `set()`, `list()`, `if()`, `foreach()`                           |
 
-3. 学习构建第三方库：[`Using Dependencies Guide`](https://cmake.org/cmake/help/latest/guide/using-dependencies/index.html#guide:Using%20Dependencies%20Guide "Using Dependencies Guide")
+### 路径管理
 
-### 语法
+| 变量名                        | 含义                                             | 示例（假设项目根目录为 `/myproject`，构建目录为 `/build`）                                           |
+| -------------------------- | ---------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `CMAKE_SOURCE_DIR`         | 顶层 CMakeLists.txt 所在目录                         | `/myproject`                                                                       |
+| `PROJECT_SOURCE_DIR`       | 当前 `project()` 所在目录（单项目中等于 `CMAKE_SOURCE_DIR`） | `/myproject`                                                                       |
+| `CMAKE_BINARY_DIR`         | 构建目录                                           | `/build`                                                                           |
+| `PROJECT_BINARY_DIR`       | 当前项目的构建目录（单项目中等于 `CMAKE_BINARY_DIR`）           | `/build`                                                                           |
+| `CMAKE_CURRENT_SOURCE_DIR` | 当前处理的 CMakeLists.txt 所在目录                      | 若处理 `/myproject/src/CMakeLists.txt`则为 `/myproject/src`                             |
+| `CMAKE_CURRENT_BINARY_DIR` | 当前处理的 CMakeLists.txt 对应的构建目录                   | 若处理 `/myproject/src/CMakeLists.txt`则为 `/build/src`                                 |
+| `CMAKE_INSTALL_PREFIX`     | 安装路径前缀                                         | `/usr/local`（默认）或自定义路径                                                             |
+| `CMAKE_COMMAND`            | 当前正在运行的 CMake 可执行文件的完整路径                       | 在 macOS 上可能是 `/usr/local/bin/cmake` 或 `/Applications/CMake.app/Contents/bin/cmake` |
 
-- `cmake_minimum_required()`
+## 目标定义
 
-每个项目最顶层的 CMakeLists.txt 文件，都必须从使用该命令来规定最低 CMake 版本开始。这保证了后续的CMake函数都使用兼容的版本运行。
+### 头文件
 
-- `project()`
+|**特性**|`include_directories`|`target_include_directories`|
+|---|---|---|
+|**作用域**|全局作用域|仅对指定目标有效|
+|**依赖传递性**|不传递|通过 `PUBLIC`/`INTERFACE` 传递|
+|**现代 CMake 推荐度**|不推荐（旧风格）|推荐（目标导向）|
+|**适用场景**|简单项目、临时测试|复杂项目、库开发|
 
-在 cmake_minimum_required() 之后需要立即调用project()命令来设置项目名称。每个项目都需要此调用。该命令还可以用于指定其他项目级别信息，例如语言或版本号。
+``` cmake
+# 添加头文件搜索路径，让编译器能找到工程内的头文件  
+include_directories(  
+        ${PROJECT_SOURCE_DIR}/BlairLearnOpenGL  
+)
+  
+# ====================== 将Core编译成静态库 ======================
+file(GLOB CORE_SOURCES "${PROJECT_SOURCE_DIR}/BlairLearnOpenGL/Core/*.cpp")  
+# 将 Core 目录的源文件编译成静态库 CoreLib（也可以用 SHARED 改成共享库/动态库）  
+add_library(CoreLib STATIC ${CORE_SOURCES})  
+target_link_libraries(CoreLib  
+        PRIVATE glfw  
+        PRIVATE glm::glm  
+        PRIVATE glad  
+)  
+# 为 Core 库设置头文件包含路径，这样其他代码包含 Core 头文件时能找到  
+target_include_directories(CoreLib PUBLIC  
+        "${PROJECT_SOURCE_DIR}/BlairLearnOpenGL/Core"  
+)
+```
+
+- **PRIVATE**：仅目标自身使用该路径。
+- **PUBLIC**：目标和依赖它的其他目标都使用该路径。
+- **INTERFACE**：仅依赖它的其他目标使用该路径（目标自身不使用）。
 
 
-### 构建
+
+
+## 构建
 
 ```shell
 $ cd MyProject
@@ -111,3 +156,12 @@ $ cmake --build . --target install
 
 - `cmake --build . --target install` 是 CMake 的一个命令，意思是构建当前目录下制定的目标 `install` 。
 	`--target` 是 CMake 的一个选项，用于指定要构建的目标。这里，`install` 表示要构建的目标是 `install`。
+
+## 参考文档
+
+1. 开始使用CMake项目：[`CMake Tutorial`](https://cmake.org/cmake/help/latest/guide/tutorial/index.html#guide:CMake%20Tutorial "CMake Tutorial")
+
+2. 学习如何构建从互联网下载的源代码包：[`User Interaction Guide`](https://cmake.org/cmake/help/latest/guide/user-interaction/index.html#guide:User%20Interaction%20Guide "User Interaction Guide")
+
+3. 学习构建第三方库：[`Using Dependencies Guide`](https://cmake.org/cmake/help/latest/guide/using-dependencies/index.html#guide:Using%20Dependencies%20Guide "Using Dependencies Guide")
+
