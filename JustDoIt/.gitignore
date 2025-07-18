@@ -1,2 +1,0 @@
-.obsidian/plugins/remotely-save  # 忽略包含敏感信息的文件
-.env  # 忽略环境变量文件
