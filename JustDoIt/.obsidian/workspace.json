@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "编程/算法/双指针.md",
+                "file": "编程/C++/C++ 101/8. Classes/8.2 Constructors 构造函数.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "双指针"
+              "title": "8.2 Constructors 构造函数"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "公式",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 353.5
+    "width": 404.5
   },
   "right": {
     "id": "105a2809d8876157",
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "编程/算法/双指针.md",
+                "file": "编程/C++/C++ 101/8. Classes/8.2 Constructors 构造函数.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 双指针"
+              "title": "Outline of 8.2 Constructors 构造函数"
             }
           },
           {
@@ -186,12 +186,20 @@
   },
   "active": "3cd5368a5b99d9e5",
   "lastOpenFiles": [
+    "编程/C++/C++ 101/8. Classes/8.5 this 指针.md",
+    "编程/C++/C++ 101/8. Classes/8.4 Constexpr 成员函数.md",
+    "编程/C++/C++ 101/8. Classes/8.2 Constructors 构造函数.md",
+    "编程/C++/C++ 101/8. Classes/8.3 Class initialization 初始化.md",
+    "编程/C++/C++ 101/3. Data Types/3.0 数据初始化 Initialization.md",
+    "编程/C++/C++ 101/6. References and Pointers/6.1 Lvalue references 左值引用.md",
+    "编程/C++/C++ 101/7. Enums and Structs/7.3 Struct.md",
+    "编程/算法/Graph Traversals - BFS & DFS.md",
+    "编程/编程基础概念词典.md",
+    "编程/算法/双指针.md",
     "面试/答辩技巧-仅供参考.md",
     "编程/算法/啊！算法地图.md",
     "编程/算法/二分查找.md",
     "编程/算法/KMP 算法.md",
-    "编程/算法/Graph Traversals - BFS & DFS.md",
-    "编程/C++/C++ 101/8. Classes/8.2 Constructors 构造函数.md",
     "编程/C++/C++ 101/8. Classes/8.1 Classes 基础类.md",
     "编程/C++/C++ 101/5. Function/5.7 无名参数 Unnamed parameters.md",
     "编程/C++/C++ 101/4. Scope/4.1 命名空间 Namespace.md",
@@ -202,16 +210,8 @@
     "编程/C++/C++ 101/3. Data Types/3.5 隐式类型转换 Implicit Type Conversion.md",
     "编程/C++/C++ 101/3. Data Types/3.4 操作符 Operator.md",
     "编程/C++/C++ 101/3. Data Types/3.1 基础数据类型 Fundamental data types.md",
-    "编程/C++/C++ 101/3. Data Types/3.0 数据初始化 Initialization.md",
     "编程/C++/C++ 101/2. Basic/2.9 静态分析工具 Static Analysis Tools.md",
     "编程/C++/C++ 101/2. Basic/2.8 捉虫 Debug.md",
-    "编程/C++/C++ 101/2. Basic/2.7 头文件 Header files.md",
-    "编程/C++/C++ 101/2. Basic/2.6 源码翻译 Translation.md",
-    "编程/C++/C++ 101/2. Basic/2.5 工具链 Toolchain.md",
-    "编程/C++/C++ 101/2. Basic/2.4 构建配置项 Build Configurations.md",
-    "编程/C++/C++ 101/2. Basic/2.3 预处理器 Preprocessor.md",
-    "编程/C++/C++ 101/2. Basic/2.2 编译器 Compiler.md",
-    "编程/C++/C++ 101/2. Basic/2.10 VS Code 中使用C++.md",
     "渲染/渲染数学",
     "面试/工作/接口文档",
     "面试/工作",
