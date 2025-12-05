@@ -78,7 +78,7 @@ GN文件相当于GYP文件的下一代，和GYP差别不大，但是总体上比
 
 # CMake 实践
 
-## 语法
+## CMake语法
 
 常用 CMake 关键词分类
 
@@ -102,8 +102,6 @@ GN文件相当于GYP文件的下一代，和GYP差别不大，但是总体上比
 | `CMAKE_CURRENT_BINARY_DIR` | 当前处理的 CMakeLists.txt 对应的构建目录                   | 若处理 `/myproject/src/CMakeLists.txt`则为 `/build/src`                                 |
 | `CMAKE_INSTALL_PREFIX`     | 安装路径前缀                                         | `/usr/local`（默认）或自定义路径                                                             |
 | `CMAKE_COMMAND`            | 当前正在运行的 CMake 可执行文件的完整路径                       | 在 macOS 上可能是 `/usr/local/bin/cmake` 或 `/Applications/CMake.app/Contents/bin/cmake` |
-
-## 目标定义
 
 ### 头文件
 
@@ -140,9 +138,7 @@ target_include_directories(CoreLib PUBLIC
 - **INTERFACE**：仅依赖它的其他目标使用该路径（目标自身不使用）。
 
 
-
-
-## 构建
+## CMake构建
 
 ```shell
 $ cd MyProject

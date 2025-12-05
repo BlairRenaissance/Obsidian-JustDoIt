@@ -2,5 +2,6 @@
   "accentColor": "",
   "theme": "moonstone",
   "baseFontSize": 15,
-  "textFontFamily": ""
+  "textFontFamily": "",
+  "showRibbon": false
 }
