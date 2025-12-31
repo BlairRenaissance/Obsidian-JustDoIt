@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "渲染/图形API/Vulkan/Vulkan文章合集/告别卡顿！一文掌握 Android Vulkan 高性能、低功耗渲染的奥秘.md",
+                "file": "AAA 计划/AAA 周计划.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "告别卡顿！一文掌握 Android Vulkan 高性能、低功耗渲染的奥秘"
+              "title": "AAA 周计划"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "渲染/图形API/Vulkan/Vulkan文章合集/告别卡顿！一文掌握 Android Vulkan 高性能、低功耗渲染的奥秘.md",
+                "file": "AAA 计划/AAA 周计划.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 告别卡顿！一文掌握 Android Vulkan 高性能、低功耗渲染的奥秘"
+              "title": "Outline of AAA 周计划"
             }
           },
           {
@@ -187,17 +187,23 @@
   },
   "active": "0aed23cad69880ec",
   "lastOpenFiles": [
-    "Toolkit/Xcode Instrument.md",
-    "Toolkit/Xcode 截帧工具.md",
-    "渲染/渲染Math/Euler Rotation 欧拉旋转.md",
+    "AAA 计划/AI建议.md",
+    "AAA 计划/AAA 周计划.md",
+    "AAA 计划/学习计划.md",
+    "AAA 计划/如何持续成长 - Chicken Soup.md",
+    "Excalidraw/Drawing 2025-08-19 20.42.10.excalidraw.md",
+    "编译型语言和解释型语言.md",
+    "渲染/图形API/Vulkan/Vulkan文章合集/零基础快速上⼿Vulkan：Android⾼性能图 形开发的必修第⼀课！.md",
     "渲染/图形API/Vulkan/Vulkan文章合集/告别卡顿！一文掌握 Android Vulkan 高性能、低功耗渲染的奥秘.md",
     "渲染/图形API/Vulkan/Vulkan文章合集/零基础快速上手Vulkan：Android高性能图形开发的必修第一课！.pdf",
+    "工具箱/Xcode Instrument.md",
+    "工具箱/Xcode 截帧工具.md",
+    "渲染/渲染Math/Euler Rotation 欧拉旋转.md",
     "渲染/图形API/Vulkan/Vulkan 101.md",
     "().md",
     "编程/编程基础概念词典.md",
     "编程/C++/C++ 基础概念词典.md",
     "编程/C++/C++语法经典问题.md",
-    "编译型语言和解释型语言.md",
     "渲染/图形API/语法坑.md",
     "渲染/Learn Graphics.md",
     "编程/性能",
@@ -210,12 +216,7 @@
     "课程/0. 课程计划.md",
     "渲染/图形引擎/游戏引擎架构/1. 引擎基础知识.md",
     "渲染/图形引擎/引擎阅读.md",
-    "Toolkit/VS Code 编译.md",
-    "Toolkit/第三方库.md",
-    "Toolkit/CMake 五分钟上手.md",
-    "渲染/渲染Math/渲染数学基础.md",
-    "渲染/图形引擎/游戏引擎架构/2. 引擎动画框架.md",
-    "编程/C++/C++ 101/3. Data Types/3.9 类型推导 Type deduction (auto).md",
+    "工具箱/VS Code 编译.md",
     "Excalidraw",
     "Untitled.canvas",
     "编程/算法/啊！算法总结",
