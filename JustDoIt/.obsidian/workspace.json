@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "编程/C++/C++ 101/1. Getting Started/1.1 纵览.md",
-                "mode": "preview",
+                "file": "渲染/渲染Math/1. MVP 矩阵.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1.1 纵览"
+              "title": "1. MVP 矩阵"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "编程/C++/C++ 101/1. Getting Started/1.1 纵览.md",
+                "file": "渲染/渲染Math/1. MVP 矩阵.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1.1 纵览"
+              "title": "Outline of 1. MVP 矩阵"
             }
           },
           {
@@ -185,8 +185,17 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "f9bef235a159df84",
+  "active": "82cbef312f4a8810",
   "lastOpenFiles": [
+    "渲染/渲染Math/线性代数的本质.md",
+    "渲染/渲染Math/渲染数学基础.md",
+    "渲染/渲染Math/1. MVP 矩阵.md",
+    "渲染/GAMES/GAMES 101.md",
+    "渲染/渲染基础概念词典.md",
+    "渲染/渲染Math/Quaternion 四元数.md",
+    "渲染/渲染Math/Euler Rotation 欧拉旋转.md",
+    "渲染/渲染Math/Complex Number 复数.md",
+    "编程/C++/C++ 101/1. Getting Started/1.1 纵览.md",
     "编程/计算机基础/多线程/thread练习：线程池.md",
     "编程/计算机基础/多线程/mutex 与 atomic 的区别.md",
     "编程/计算机基础/多线程/atomic练习：粒子雨.md",
@@ -204,15 +213,6 @@
     "渲染/端/Android 架构简述.md",
     "渲染/端/GLSurfaceView 简介与源码.md",
     "编程/计算机基础/编译时长优化.md",
-    "工具箱/Shell 命令行工具.md",
-    "编程/C++/C++语法经典问题.md",
-    "编程/C++/C++ 基础概念词典.md",
-    "编程/C++/C++ 101/1. Getting Started/1.1 纵览.md",
-    "渲染/图形引擎/Unity/Topics/Draw Call Optimization.md",
-    "编程/C++/C++ 101/7. Enums and Structs/7.2 Scoped enum (enum class).md",
-    "编程/C++/C++ 101/3. Data Types/3.9 类型推导 Type deduction (auto).md",
-    "AAA 计划/课程计划.md",
-    "编程/C++/C++ 101/1. Getting Started/1.2 C++ 101.md",
     "等等",
     "编程/C++/项目/webserver.pdf",
     "渲染/图形API/Vulkan/Vulkan文章合集/零基础快速上手Vulkan：Android高性能图形开发的必修第一课！.pdf",
