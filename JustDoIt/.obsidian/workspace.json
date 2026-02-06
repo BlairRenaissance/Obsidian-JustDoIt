@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "渲染/渲染Math/1. MVP 矩阵.md",
+                "file": "渲染/GAMES/GAMES 104/L13 - Game Engine Tool Chain (工具链架构).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1. MVP 矩阵"
+              "title": "L13 - Game Engine Tool Chain (工具链架构)"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "渲染/渲染Math/1. MVP 矩阵.md",
+                "file": "渲染/GAMES/GAMES 104/L13 - Game Engine Tool Chain (工具链架构).md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1. MVP 矩阵"
+              "title": "Outline of L13 - Game Engine Tool Chain (工具链架构)"
             }
           },
           {
@@ -187,10 +187,13 @@
   },
   "active": "82cbef312f4a8810",
   "lastOpenFiles": [
+    "渲染/GAMES/GAMES 101.md",
+    "渲染/GAMES/GAMES 104/L13 - Game Engine Tool Chain (工具链架构).md",
+    "渲染/渲染Math/1. MVP 矩阵.md",
+    "渲染/GAMES/GAMES 104",
+    "渲染/GAMES/Untitled.md",
     "渲染/渲染Math/线性代数的本质.md",
     "渲染/渲染Math/渲染数学基础.md",
-    "渲染/渲染Math/1. MVP 矩阵.md",
-    "渲染/GAMES/GAMES 101.md",
     "渲染/渲染基础概念词典.md",
     "渲染/渲染Math/Quaternion 四元数.md",
     "渲染/渲染Math/Euler Rotation 欧拉旋转.md",
@@ -211,8 +214,6 @@
     "渲染/端/Android 图形显示简述.md",
     "渲染/端/创建地图视图.md",
     "渲染/端/Android 架构简述.md",
-    "渲染/端/GLSurfaceView 简介与源码.md",
-    "编程/计算机基础/编译时长优化.md",
     "等等",
     "编程/C++/项目/webserver.pdf",
     "渲染/图形API/Vulkan/Vulkan文章合集/零基础快速上手Vulkan：Android高性能图形开发的必修第一课！.pdf",
@@ -224,7 +225,6 @@
     "编程/算法/啊！算法总结",
     "Pasted image 20250812165246.png",
     "渲染/GAMES",
-    "编程/C++/C++ 101/9. Container",
     "Clipboard_Screenshot_1752202561.png",
     "Pasted image 20250710110700.png",
     "编程/算法/Clipboard_Screenshot_1751276754.png",
